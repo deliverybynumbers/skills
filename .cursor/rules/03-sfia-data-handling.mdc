@@ -1,0 +1,117 @@
+---
+description: "SFIA CSV parsing and skill data management"
+globs: ["scripts/parse_sfia.py", "input/**/*.csv"]
+---
+
+# SFIA Data Handling
+
+This project processes SFIA (Skills Framework for the Information Age) skill definitions from a CSV file. Follow these guidelines for working with SFIA data.
+
+## CSV File Location
+
+- **Source file**: `input/sfia-9_current-standard_en_250129(Skills).csv`
+- **Parser**: `scripts/parse_sfia.py`
+- **Usage**: Imported by `scripts/generate_pages.py` for page generation
+
+## CSV Structure
+
+The SFIA CSV has a specific structure:
+
+- **Columns 0-7**: Level indicators (may be empty or contain level numbers)
+- **Column 8**: Skill code (e.g., "SWDN", "PROG", "ARCH")
+- **Column 9**: URL to SFIA skill definition
+- **Column 10**: Skill name
+- **Column 11**: Category
+- **Column 12**: Subcategory
+- **Column 13**: Overall description
+- **Column 14**: Guidance notes
+- **Columns 15-21**: Level 1-7 descriptions (one per column)
+
+## Parsing Approach
+
+Use `pandas` for robust CSV parsing:
+
+- **Why pandas**: Handles encoding issues, multi-line fields, and malformed data gracefully
+- **Encoding fallbacks**: Try multiple encodings (`utf-8`, `latin-1`, `cp1252`, `iso-8859-1`)
+- **Error handling**: Skip bad lines rather than failing completely
+- **Data validation**: Check for missing codes and handle gracefully
+
+See implementation in [@scripts/parse_sfia.py](scripts/parse_sfia.py).
+
+## SFIASkill Class
+
+The `SFIASkill` class encapsulates skill data:
+
+```python
+class SFIASkill:
+    code: str                    # Skill code (e.g., "SWDN")
+    name: str                    # Skill name
+    url: str                     # SFIA URL
+    category: str                # Category
+    subcategory: str             # Subcategory
+    overall_description: str     # Overall description
+    guidance_notes: str          # Guidance notes
+    level_descriptions: Dict[int, str]  # Level-specific descriptions
+```
+
+## Skill Code Validation
+
+- Always validate skill codes exist before using them
+- The parser returns a `Dict[str, SFIASkill]` mapping codes to skill objects
+- Check for missing skills: `if code in skills:`
+- Warn but continue if a skill code is not found (don't fail generation)
+
+## Level Descriptions
+
+- Not all skills have descriptions at all levels
+- Use `get_level_description(level)` to retrieve level-specific text
+- Handle missing levels with fallback logic:
+  - Try the requested level
+  - Fall back to closest available level
+  - Or use generic description if no level-specific text exists
+
+Example fallback logic:
+```python
+def get_level_description(skill: SFIASkill, level: int) -> Optional[str]:
+    # Try exact level
+    desc = skill.get_level_description(level)
+    if desc:
+        return desc
+
+    # Fall back to closest available level
+    available_levels = sorted(skill.level_descriptions.keys())
+    if available_levels:
+        # Find closest level
+        closest = min(available_levels, key=lambda x: abs(x - level))
+        return skill.get_level_description(closest)
+
+    return None
+```
+
+## Data Access Patterns
+
+- Parse once at startup: `skills = parse_sfia_csv(csv_path)`
+- Look up by code: `skill = skills.get("SWDN")`
+- Check existence: `if "SWDN" in skills:`
+- Iterate over skills: `for code, skill in skills.items():`
+
+## Common Issues
+
+1. **Encoding errors**: CSV may use non-UTF-8 encoding - parser handles this automatically
+2. **Missing levels**: Some skills don't have all 7 levels - use fallback logic
+3. **Empty fields**: Handle `pd.isna()` and empty strings appropriately
+4. **Multi-line fields**: Pandas handles these automatically with proper quote handling
+
+## Modifying the Parser
+
+If you need to modify CSV parsing:
+
+1. Edit `scripts/parse_sfia.py`
+2. Test with: `venv/bin/python3 scripts/parse_sfia.py`
+3. Verify output shows expected skills and levels
+4. Regenerate pages: `venv/bin/python3 scripts/generate_pages.py`
+
+## Reference
+
+- Implementation: [@scripts/parse_sfia.py](scripts/parse_sfia.py)
+- Usage: [@scripts/generate_pages.py](scripts/generate_pages.py)

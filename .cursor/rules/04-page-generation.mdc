@@ -1,0 +1,177 @@
+---
+description: "Role page generation workflow and content structure"
+globs: ["scripts/generate_pages.py", "docs/roles/**/*.md"]
+---
+
+# Page Generation Workflow
+
+Role pages in `docs/roles/` are **auto-generated** from Python scripts. Never edit them manually - your changes will be lost.
+
+## When to Regenerate Pages
+
+Regenerate pages after:
+
+- Modifying `scripts/generate_pages.py` (any changes)
+- Updating role definitions (`ROLE_SKILLS`, `ROLE_TITLES`, `ENGINEER_TYPES`)
+- Changing framework overview content (`FRAMEWORK_OVERVIEW`, `LEVEL_DESCRIPTIONS`)
+- Modifying page structure or formatting
+- Updating SFIA CSV (though this is rare)
+
+## How to Regenerate
+
+Run the generation script:
+
+```bash
+venv/bin/python3 scripts/generate_pages.py
+```
+
+Or if venv is activated:
+
+```bash
+python scripts/generate_pages.py
+```
+
+## Role Definitions
+
+Role definitions are in `scripts/generate_pages.py`:
+
+### ROLE_SKILLS Dictionary
+
+Maps role types to required SFIA skill codes:
+
+```python
+ROLE_SKILLS = {
+    "software-engineer": ["SWDN", "PROG", "ARCH", "DBAD", "DEPL"],
+    "security-engineer": ["IRMG", "SCTY", "PENT"],
+    # ... etc
+}
+```
+
+### ROLE_TITLES Dictionary
+
+Maps career paths and levels to role titles:
+
+```python
+ROLE_TITLES = {
+    "engineering": {
+        1: "Associate {type} Engineer",
+        2: "{type} Engineer",
+        # ... etc
+    },
+    # ... other paths
+}
+```
+
+### ENGINEER_TYPES Dictionary
+
+Maps engineer type keys to display names:
+
+```python
+ENGINEER_TYPES = {
+    "software-engineer": "Software",
+    "security-engineer": "Security",
+    # ... etc
+}
+```
+
+## Modifying Role Definitions
+
+To add or modify roles:
+
+1. Edit the appropriate dictionary in `scripts/generate_pages.py`
+2. Regenerate all pages: `venv/bin/python3 scripts/generate_pages.py`
+3. Update `mkdocs.yml` navigation if adding new roles or levels
+4. Test the generated pages
+
+## File Naming Patterns
+
+Generated files follow consistent naming:
+
+- **Engineering roles**: `level-{N}-{descriptor}.md`
+  - Example: `level-1-associate.md`, `level-2-engineer.md`
+- **Management/Product/Programmes**: `level-{N}-{role-name}.md`
+  - Example: `level-4-engineering-manager.md`
+
+File paths match the directory structure:
+- `docs/roles/engineering/{engineer-type}/level-{N}-{descriptor}.md`
+- `docs/roles/management/level-{N}-{role-name}.md`
+- `docs/roles/product/level-{N}-{role-name}.md`
+- `docs/roles/programmes/level-{N}-{role-name}.md`
+
+## Content Structure
+
+Each generated page includes:
+
+1. **Metadata** (YAML frontmatter or markdown headers):
+   - Level number
+   - Career path
+   - Engineer type (if applicable)
+   - Role title
+
+2. **Framework Overview**:
+   - General framework guidance from `FRAMEWORK_OVERVIEW`
+   - Extracted from PDF reference document
+
+3. **Role Overview**:
+   - Level-specific `scope_summary` and `description`
+   - From `LEVEL_DESCRIPTIONS` dictionary
+
+4. **SFIA Skills Section**:
+   - For each required skill code:
+     - Skill name and code
+     - Overall description
+     - Guidance notes
+     - Level-specific attainment description
+
+5. **Navigation Links**:
+   - Previous/Next level links (if applicable)
+   - Back to Home link
+   - About the Framework link
+
+## Navigation Updates
+
+After regenerating pages, check `mkdocs.yml`:
+
+- Ensure all new pages are included in navigation
+- Maintain hierarchical structure matching directory layout
+- Update if you've added new role types or levels
+
+## Content Sources
+
+- **SFIA skill data**: From `input/sfia-9_current-standard_en_250129(Skills).csv`
+- **Framework overview**: Embedded in `scripts/generate_pages.py` as `FRAMEWORK_OVERVIEW`
+- **Level descriptions**: Embedded in `scripts/generate_pages.py` as `LEVEL_DESCRIPTIONS`
+- **Role definitions**: Dictionaries in `scripts/generate_pages.py`
+
+## Common Modifications
+
+### Adding a New Skill to a Role
+
+1. Edit `ROLE_SKILLS` dictionary in `scripts/generate_pages.py`
+2. Add skill code to the role's list
+3. Regenerate pages
+
+### Changing a Role Title
+
+1. Edit `ROLE_TITLES` dictionary in `scripts/generate_pages.py`
+2. Update the title template for the path/level
+3. Regenerate pages
+
+### Updating Framework Overview
+
+1. Edit `FRAMEWORK_OVERVIEW` string in `scripts/generate_pages.py`
+2. Regenerate pages
+
+### Adding a New Role Type
+
+1. Add entry to `ROLE_SKILLS` dictionary
+2. Add entry to `ENGINEER_TYPES` (if engineering role)
+3. Update `ROLE_TITLES` if needed
+4. Regenerate pages
+5. Update `mkdocs.yml` navigation
+
+## Reference
+
+- Generation script: [@scripts/generate_pages.py](scripts/generate_pages.py)
+- SFIA parser: [@scripts/parse_sfia.py](scripts/parse_sfia.py)
+- Example generated page: `docs/roles/engineering/software-engineer/level-1-associate.md`

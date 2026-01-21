@@ -1,0 +1,116 @@
+---
+description: "Python coding standards and conventions"
+globs: ["scripts/**/*.py", "*.py"]
+---
+
+# Python Code Standards and Conventions
+
+This project uses Python 3 for data processing and page generation. Follow these standards to maintain code quality and consistency.
+
+## Virtual Environment
+
+**CRITICAL**: Always use the virtual environment. Never install packages globally.
+
+- Virtual environment location: `venv/` in project root
+- Activate before working: `source venv/bin/activate`
+- Or use directly: `venv/bin/python3 script.py`
+- Install dependencies: `venv/bin/pip install -r requirements.txt`
+
+## Code Style
+
+Follow PEP 8 conventions:
+
+- Use 4 spaces for indentation (no tabs)
+- Maximum line length: 88 characters (Black formatter default)
+- Use descriptive variable and function names
+- Use snake_case for functions and variables
+- Use PascalCase for classes
+
+## Type Hints
+
+Always use type hints for function parameters and return types:
+
+```python
+from typing import Dict, List, Optional
+from pathlib import Path
+
+def parse_sfia_csv(csv_path: Path) -> Dict[str, SFIASkill]:
+    """Parse SFIA CSV and return skills dictionary."""
+    ...
+```
+
+See examples in [@scripts/parse_sfia.py](scripts/parse_sfia.py) and [@scripts/generate_pages.py](scripts/generate_pages.py).
+
+## Imports
+
+- Use absolute imports when possible
+- For scripts in `scripts/`, use `sys.path.insert` to enable relative imports:
+  ```python
+  import sys
+  from pathlib import Path
+
+  script_dir = Path(__file__).parent
+  sys.path.insert(0, str(script_dir))
+
+  from parse_sfia import parse_sfia_csv, SFIASkill
+  ```
+- Group imports: standard library, third-party, local (with blank lines between)
+
+## Error Handling
+
+Handle errors gracefully with appropriate fallbacks:
+
+- CSV parsing: Try multiple encodings before failing
+- Missing data: Use `Optional` types and check for `None`
+- File operations: Check file existence before reading
+- Provide clear error messages
+
+Example from [@scripts/parse_sfia.py](scripts/parse_sfia.py):
+```python
+encodings = ['utf-8', 'latin-1', 'cp1252', 'iso-8859-1']
+for encoding in encodings:
+    try:
+        df = pd.read_csv(csv_path, encoding=encoding, ...)
+        break
+    except (UnicodeDecodeError, pd.errors.ParserError):
+        continue
+```
+
+## Documentation
+
+- Include module docstrings: `"""Brief description."""`
+- Include function docstrings with parameters and return values
+- Use descriptive variable names that document intent
+- Add comments for complex logic
+
+## Path Handling
+
+Use `pathlib.Path` for cross-platform compatibility:
+
+```python
+from pathlib import Path
+
+script_dir = Path(__file__).parent
+repo_root = script_dir.parent
+csv_path = repo_root / "input" / "sfia.csv"
+```
+
+## Script Execution
+
+- Include shebang: `#!/usr/bin/env python3`
+- Make scripts executable: `chmod +x script.py`
+- Use `if __name__ == "__main__":` for main entry points
+- Provide clear error messages and exit codes
+
+## Dependencies
+
+- All dependencies listed in `requirements.txt`
+- Use `>=` for version constraints (e.g., `pandas>=2.0.0`)
+- Install new dependencies: `venv/bin/pip install package` then update `requirements.txt`
+- Never commit `venv/` directory
+
+## Code Examples
+
+Reference these files for examples:
+- [@scripts/parse_sfia.py](scripts/parse_sfia.py) - CSV parsing, error handling, type hints
+- [@scripts/generate_pages.py](scripts/generate_pages.py) - File generation, path handling, data structures

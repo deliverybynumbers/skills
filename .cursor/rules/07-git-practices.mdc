@@ -1,0 +1,159 @@
+---
+description: "Version control and git workflow guidelines"
+---
+
+# Git and Version Control Practices
+
+Follow these guidelines for version control in this project.
+
+## What to Commit
+
+### Source Files (Always Commit)
+
+- **Python scripts**: `scripts/*.py`
+- **Manual documentation**: `docs/index.md`, `docs/about.md`
+- **Configuration**: `mkdocs.yml`, `requirements.txt`
+- **Input data**: `input/*.csv`, `input/*.pdf`
+- **Cursor rules**: `.cursor/rules/*.mdc`
+- **Project files**: `README.md`, `.gitignore`, `dev.sh`, `dev.py`
+
+### Generated Files (Commit These)
+
+- **Generated role pages**: `docs/roles/**/*.md`
+  - These are part of the documentation, even though they're generated
+  - Commit them so the site can be built without running generation scripts
+  - Regenerate and commit after script changes
+
+### Build Artifacts (Never Commit)
+
+- **`venv/`** - Virtual environment directory
+- **`site/`** - MkDocs build output
+- **`__pycache__/`** - Python bytecode cache
+- **`*.pyc`** - Compiled Python files
+- **`.DS_Store`** - macOS system files
+
+## .gitignore Patterns
+
+Ensure `.gitignore` includes:
+
+```
+venv/
+.venv/
+site/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.DS_Store
+*.swp
+*.swo
+*~
+```
+
+## Commit Workflow
+
+### Before Committing
+
+1. **Regenerate pages** if you modified `scripts/generate_pages.py`
+2. **Test build**: Run `mkdocs build` to ensure it succeeds
+3. **Review changes**: Check what files were modified
+4. **Verify navigation**: Ensure all links work
+
+### Commit Messages
+
+Use clear, descriptive commit messages:
+
+- Good: `Add Security Engineer role definitions`
+- Good: `Update framework overview content from PDF`
+- Good: `Fix navigation links in generated role pages`
+- Bad: `Updates`
+- Bad: `Fix stuff`
+
+### Typical Commit Sequence
+
+```bash
+# 1. Edit source files
+vim scripts/generate_pages.py
+
+# 2. Regenerate pages
+venv/bin/python3 scripts/generate_pages.py
+
+# 3. Test build
+venv/bin/mkdocs build
+
+# 4. Review changes
+git status
+git diff
+
+# 5. Commit
+git add scripts/generate_pages.py docs/roles/
+git commit -m "Add new role type and regenerate pages"
+```
+
+## Branch Strategy
+
+- Use feature branches for significant changes
+- Merge to main/master after testing
+- Keep main/master branch buildable at all times
+
+## Handling Generated Files
+
+### When to Regenerate
+
+- After modifying `scripts/generate_pages.py`
+- After updating role definitions
+- After changing framework content
+- Before committing script changes
+
+### Regeneration Command
+
+```bash
+venv/bin/python3 scripts/generate_pages.py
+```
+
+### Commit Generated Files
+
+Always commit regenerated pages along with script changes:
+
+```bash
+git add scripts/generate_pages.py
+git add docs/roles/
+git commit -m "Update role generation: [description]"
+```
+
+## File Size Considerations
+
+- Large CSV files (`input/*.csv`) are tracked - this is intentional
+- PDF reference files are tracked - this is intentional
+- Generated markdown files are relatively small and should be committed
+
+## Merge Conflicts
+
+If conflicts occur in generated files:
+
+1. **Don't manually resolve** - conflicts will be overwritten
+2. **Regenerate after merge**: `venv/bin/python3 scripts/generate_pages.py`
+3. **Commit regenerated files**
+
+## Best Practices
+
+1. **Commit frequently** - small, logical commits
+2. **Test before committing** - ensure build succeeds
+3. **Commit script + generated files together** - keep them in sync
+4. **Never commit build artifacts** - use `.gitignore`
+5. **Use descriptive commit messages** - explain what and why
+
+## Common Mistakes to Avoid
+
+❌ **Committing `venv/`** - Use `.gitignore`
+❌ **Committing `site/`** - Build output should not be committed
+❌ **Editing generated files** - Edit scripts instead
+❌ **Committing script changes without regenerating** - Keep them in sync
+❌ **Forgetting to commit generated pages** - They're part of the docs
+
+## Reference
+
+- `.gitignore` should be configured to exclude build artifacts
+- Generated files: `docs/roles/**/*.md`
+- Source files: `scripts/*.py`, `docs/index.md`, `docs/about.md`

@@ -1,0 +1,168 @@
+---
+description: "Development server setup and testing workflow"
+globs: ["dev.sh", "dev.py", "mkdocs.yml"]
+---
+
+# Development Workflow
+
+This project uses MkDocs with Material theme for documentation. Follow this workflow for development and testing.
+
+## Starting the Development Server
+
+Two options available:
+
+### Option 1: Bash Script
+
+```bash
+./dev.sh
+```
+
+### Option 2: Python Script
+
+```bash
+venv/bin/python3 dev.py
+```
+
+Or if venv is activated:
+
+```bash
+python dev.py
+```
+
+Both scripts:
+- Activate virtual environment automatically (if found)
+- Start MkDocs dev server with hot reload
+- Watch `docs/` directory for changes
+- Serve at `http://127.0.0.1:8000`
+
+## Hot Reload
+
+The development server includes **hot reload** functionality:
+
+- Changes to markdown files automatically reload the browser
+- No need to manually refresh
+- Works for both generated and manual pages
+
+## Development Process
+
+### 1. Make Changes
+
+- Edit Python scripts in `scripts/`
+- Edit manual pages in `docs/` (but NOT `docs/roles/`)
+- Edit `mkdocs.yml` for configuration changes
+
+### 2. Regenerate Pages (if needed)
+
+If you modified `scripts/generate_pages.py`:
+
+```bash
+venv/bin/python3 scripts/generate_pages.py
+```
+
+### 3. View Changes
+
+- Development server automatically reloads
+- Check browser at `http://127.0.0.1:8000`
+- Navigate to changed pages to verify
+
+### 4. Test Navigation
+
+- Click through navigation menu
+- Verify all links work
+- Check Previous/Next links on role pages
+- Test Back to Home links
+
+## Testing Procedures
+
+### After Script Changes
+
+1. Regenerate pages: `venv/bin/python3 scripts/generate_pages.py`
+2. Check for errors in terminal output
+3. Verify pages exist at expected paths
+4. View pages in browser
+5. Test navigation links
+
+### After Navigation Changes
+
+1. Edit `mkdocs.yml`
+2. Restart dev server (Ctrl+C, then restart)
+3. Check navigation menu structure
+4. Verify all pages are accessible
+
+### After Content Changes
+
+1. If manual pages: Changes appear automatically via hot reload
+2. If generated pages: Regenerate first, then view
+3. Check formatting and links
+
+## Validation Steps
+
+Before committing changes:
+
+1. **Build test**: Run `mkdocs build` to ensure site builds successfully
+2. **Link check**: Verify all internal links work
+3. **Navigation check**: Ensure all pages are reachable via navigation
+4. **Content check**: Review generated pages for correctness
+5. **Format check**: Ensure consistent markdown formatting
+
+## Build Process
+
+To build the static site:
+
+```bash
+venv/bin/mkdocs build
+```
+
+Output goes to `site/` directory (gitignored).
+
+To serve the built site:
+
+```bash
+venv/bin/mkdocs serve
+```
+
+## Common Issues
+
+### MkDocs Not Found
+
+Error: `mkdocs not found`
+
+Solution:
+1. Ensure virtual environment exists: `python3 -m venv venv`
+2. Activate it: `source venv/bin/activate`
+3. Install dependencies: `pip install -r requirements.txt`
+
+### Port Already in Use
+
+Error: Port 8000 already in use
+
+Solution:
+- Stop other MkDocs server instances
+- Or use different port: `mkdocs serve --dev-addr=127.0.0.1:8001`
+
+### Changes Not Appearing
+
+- Ensure dev server is running with `--livereload`
+- Check browser console for errors
+- Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)
+- Verify file was saved
+
+### Generated Pages Not Updating
+
+- Regenerate pages: `venv/bin/python3 scripts/generate_pages.py`
+- Check for errors in generation script output
+- Verify files were written to correct location
+
+## Scripts Reference
+
+- Development server (bash): [@dev.sh](dev.sh)
+- Development server (Python): [@dev.py](dev.py)
+- MkDocs config: [@mkdocs.yml](mkdocs.yml)
+
+## Best Practices
+
+1. **Always test locally** before committing
+2. **Use hot reload** for faster iteration
+3. **Regenerate after script changes** - don't forget this step
+4. **Test navigation** after any structural changes
+5. **Build before committing** to catch build errors early

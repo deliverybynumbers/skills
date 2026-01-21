@@ -1,0 +1,173 @@
+---
+description: "Markdown formatting and documentation standards"
+globs: ["docs/**/*.md", "*.md"]
+---
+
+# Markdown and Documentation Standards
+
+This project uses Markdown for all documentation. Follow these formatting conventions for consistency.
+
+## File Format
+
+- Use `.md` extension for all markdown files
+- Use UTF-8 encoding
+- Use Unix line endings (LF, not CRLF)
+- End files with a single newline
+
+## Header Hierarchy
+
+Use consistent header levels:
+
+- `#` - Page title (H1) - use once per page
+- `##` - Major sections (H2)
+- `###` - Subsections (H3)
+- `####` - Sub-subsections (H4)
+
+Example structure:
+```markdown
+# Page Title
+
+## Section 1
+
+### Subsection 1.1
+
+## Section 2
+```
+
+## Link Patterns
+
+### Internal Links
+
+Use **relative paths** for internal links:
+
+- To other docs: `[Link Text](path/to/file.md)`
+- To sections: `[Link Text](path/to/file.md#section-id)`
+- Navigation links: Use relative paths from current file location
+
+Examples:
+```markdown
+[Software Engineer Level 1](roles/engineering/software-engineer/level-1-associate.md)
+[Back to Home](../index.md)
+[About the Framework](../about.md)
+```
+
+### External Links
+
+Use full URLs:
+```markdown
+[SFIA Framework](https://sfia-online.org/)
+```
+
+## Navigation Links
+
+Each generated role page includes navigation at the bottom:
+
+- **Previous/Next**: Links to adjacent levels in the same role path
+- **Back to Home**: Link to `docs/index.md`
+- **About the Framework**: Link to `docs/about.md`
+
+Format:
+```markdown
+---
+
+## Navigation
+
+- [← Previous Level](path/to/previous.md) | [Next Level →](path/to/next.md)
+- [← Back to Home](../index.md) | [About the Framework →](../about.md)
+```
+
+## Page Metadata
+
+For generated role pages, include metadata at the top:
+
+```markdown
+# Level {N}: {Role Title}
+
+**Career Path**: {Path Name}
+**Level**: {N}
+**Engineer Type**: {Type} (if applicable)
+```
+
+## Lists
+
+- Use `-` for unordered lists
+- Use `1.` for ordered lists
+- Indent nested lists with 2 spaces
+- Leave blank line before and after lists
+
+## Code Blocks
+
+- Use triple backticks with language identifier
+- For inline code, use single backticks
+
+```markdown
+```python
+def example():
+    return "code"
+```
+
+Use `code` for inline code.
+```
+
+## Emphasis
+
+- **Bold**: `**text**` for important terms
+- *Italic*: `*text*` for emphasis
+- Use bold for skill codes and role names
+
+## SFIA Skill Formatting
+
+When displaying SFIA skills, use consistent formatting:
+
+```markdown
+### {Skill Code}: {Skill Name}
+
+**Overall Description**:
+{description text}
+
+**Guidance Notes**:
+{guidance text}
+
+**Level {N} Attainment**:
+{level-specific description}
+```
+
+## Generated vs. Manual Pages
+
+### Generated Pages (`docs/roles/**/*.md`)
+
+- **DO NOT EDIT** - These are auto-generated
+- Formatting is controlled by `scripts/generate_pages.py`
+- To change formatting, modify the generation script
+
+### Manual Pages (`docs/index.md`, `docs/about.md`)
+
+- Can be edited directly
+- Follow these markdown standards
+- Use consistent formatting with generated pages
+
+## Markdown Extensions
+
+MkDocs Material theme supports extensions configured in `mkdocs.yml`:
+
+- Code highlighting with line numbers
+- Tables
+- Admonitions (notes, warnings, etc.)
+- Task lists
+- And more
+
+See [@mkdocs.yml](mkdocs.yml) for configured extensions.
+
+## Best Practices
+
+1. **Consistency**: Match formatting style of existing pages
+2. **Readability**: Use clear headings and short paragraphs
+3. **Links**: Always use relative paths for internal links
+4. **Navigation**: Include clear navigation paths
+5. **Structure**: Use logical heading hierarchy
+
+## Reference Examples
+
+- Landing page: [@docs/index.md](docs/index.md)
+- Generated role page: `docs/roles/engineering/software-engineer/level-1-associate.md`
+- About page: [@docs/about.md](docs/about.md)

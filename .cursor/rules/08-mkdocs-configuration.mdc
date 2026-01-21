@@ -1,0 +1,158 @@
+---
+description: "MkDocs site configuration and navigation structure"
+globs: ["mkdocs.yml"]
+---
+
+# MkDocs Configuration
+
+This project uses MkDocs with Material theme. Configuration is in `mkdocs.yml`.
+
+## Configuration File
+
+- **Location**: `mkdocs.yml` in project root
+- **Format**: YAML
+- **Purpose**: Site metadata, theme, navigation, extensions
+
+## Site Metadata
+
+```yaml
+site_name: Tech Department Career Framework
+site_description: A career framework for tech departments using SFIA skills definitions
+```
+
+## Theme Configuration
+
+Uses Material for MkDocs theme:
+
+```yaml
+theme:
+  name: material
+  palette:
+    - scheme: default  # Light mode
+    - scheme: slate    # Dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+```
+
+## Navigation Structure
+
+The `nav:` section defines the site navigation hierarchy:
+
+- Must match the actual file structure
+- Order matters - defines menu order
+- Nested structure creates expandable sections
+
+Example structure:
+```yaml
+nav:
+  - Home: index.md
+  - About: about.md
+  - Engineering Roles:
+    - Software Engineer:
+      - Level 1 - Associate: roles/engineering/software-engineer/level-1-associate.md
+      # ... more levels
+```
+
+## Adding New Pages to Navigation
+
+When adding new role pages:
+
+1. **Regenerate pages** first: `venv/bin/python3 scripts/generate_pages.py`
+2. **Verify files exist** at expected paths
+3. **Add to `mkdocs.yml`** navigation section
+4. **Maintain hierarchy** - match directory structure
+5. **Test navigation** - restart dev server and check menu
+
+## Markdown Extensions
+
+Configured extensions enhance markdown capabilities:
+
+- `pymdownx.highlight` - Code syntax highlighting
+- `pymdownx.inlinehilite` - Inline code highlighting
+- `pymdownx.snippets` - Include snippets from files
+- `pymdownx.superfences` - Enhanced code fences
+- `pymdownx.tabbed` - Tabbed content blocks
+- `attr_list` - Add HTML attributes
+- `md_in_html` - Use HTML in markdown
+
+## Navigation Best Practices
+
+1. **Match directory structure** - Keep nav aligned with file organization
+2. **Logical grouping** - Group related pages together
+3. **Clear labels** - Use descriptive navigation labels
+4. **Consistent naming** - Follow naming patterns
+5. **Complete coverage** - Include all important pages
+
+## Common Navigation Patterns
+
+### Engineering Roles
+
+```yaml
+- Engineering Roles:
+  - Software Engineer:
+    - Level 1 - Associate: roles/engineering/software-engineer/level-1-associate.md
+    - Level 2 - Engineer: roles/engineering/software-engineer/level-2-engineer.md
+    # ... etc
+```
+
+### Management Roles
+
+```yaml
+- Management Roles:
+  - Level 4 - Engineering Manager: roles/management/level-4-engineering-manager.md
+  # ... etc
+```
+
+## Modifying Configuration
+
+### Adding a New Role Type
+
+1. Regenerate pages with new role
+2. Add navigation section in `mkdocs.yml`
+3. Follow existing pattern for consistency
+4. Test navigation menu
+
+### Changing Theme Settings
+
+1. Edit `theme:` section in `mkdocs.yml`
+2. Restart dev server to see changes
+3. Test in both light and dark modes
+
+### Adding Extensions
+
+1. Add extension to `markdown_extensions:` list
+2. Configure if needed (see extension docs)
+3. Test that it works as expected
+
+## Site Structure
+
+The navigation should reflect this structure:
+
+```
+Home (index.md)
+About (about.md)
+Engineering Roles/
+  Software Engineer/
+    Level 1-7 pages
+  Security Engineer/
+    Level 1-7 pages
+  ... (other engineer types)
+Management Roles/
+  Level 4-7 pages
+Product Roles/
+  Level 3-7 pages
+Programmes Roles/
+  Level 2-6 pages
+```
+
+## Reference
+
+- Configuration file: [@mkdocs.yml](mkdocs.yml)
+- MkDocs docs: https://www.mkdocs.org/
+- Material theme: https://squidfunk.github.io/mkdocs-material/

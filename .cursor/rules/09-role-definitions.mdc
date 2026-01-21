@@ -1,0 +1,180 @@
+---
+description: "Role and SFIA skill code definitions"
+globs: ["scripts/generate_pages.py"]
+---
+
+# Role and Skill Definitions
+
+Role definitions and SFIA skill mappings are defined in `scripts/generate_pages.py`. This file is the single source of truth for roles and their required skills.
+
+## Location
+
+All role definitions are in `scripts/generate_pages.py`:
+
+- `ROLE_SKILLS` - Maps role types to SFIA skill codes
+- `ROLE_TITLES` - Maps paths and levels to role titles
+- `ENGINEER_TYPES` - Maps engineer keys to display names
+
+## ROLE_SKILLS Dictionary
+
+Defines which SFIA skills are required for each role type:
+
+```python
+ROLE_SKILLS = {
+    "software-engineer": ["SWDN", "PROG", "ARCH", "DBAD", "DEPL"],
+    "security-engineer": ["IRMG", "SCTY", "PENT"],
+    "support-engineer": ["CSMG", "ASUP", "INCA"],
+    "systems-engineer": ["SYSP", "CHMG", "ITOP", "ASMG", "DEMM", "DCMA", "USUP"],
+    "qa-engineer": ["TEST", "NFTS", "QUAS", "BPTS"],
+    "product-management": ["PROD", "REQM", "BSMO", "CEXP", "DEMG"],
+    "people-management": ["ETMG", "POMG", "SORC", "SUPP"],
+}
+```
+
+### Adding a Skill to a Role
+
+1. Edit `ROLE_SKILLS` dictionary
+2. Add skill code to the role's list
+3. Regenerate pages: `venv/bin/python3 scripts/generate_pages.py`
+
+### Adding a New Role Type
+
+1. Add entry to `ROLE_SKILLS` with skill codes
+2. Add to `ROLE_TITLES` if needed (or use existing path)
+3. Add to `ENGINEER_TYPES` if it's an engineering role
+4. Regenerate pages
+5. Update `mkdocs.yml` navigation
+
+## ROLE_TITLES Dictionary
+
+Defines role titles by career path and level:
+
+```python
+ROLE_TITLES = {
+    "engineering": {
+        1: "Associate {type} Engineer",
+        2: "{type} Engineer",
+        3: "Senior {type} Engineer",
+        4: "Lead {type} Engineer",
+        5: "Principal {type} Engineer",
+        6: "Distinguished {type} Engineer",
+        7: "CTO",
+    },
+    "management": {
+        4: "Engineering Manager",
+        5: "Senior Engineering Manager",
+        6: "Director of Engineering",
+        7: "VP of Engineering",
+    },
+    "product": {
+        3: "Business Analyst",
+        4: "Product Manager",
+        5: "Senior Product Manager",
+        6: "Director of Product",
+        7: "VP of Product",
+    },
+    "programmes": {
+        2: "Project Assistant",
+        3: "Project Manager",
+        4: "Programme Manager",
+        5: "Senior Programme Manager",
+        6: "Director of Projects",
+    },
+}
+```
+
+### Title Format Strings
+
+- Engineering roles use `{type}` placeholder (replaced with engineer type)
+- Other paths use fixed titles
+- Level numbers map to SFIA levels (1-7)
+
+### Modifying Titles
+
+1. Edit `ROLE_TITLES` dictionary
+2. Change title template for the path/level
+3. Regenerate pages
+
+## ENGINEER_TYPES Dictionary
+
+Maps engineer type keys to display names:
+
+```python
+ENGINEER_TYPES = {
+    "software-engineer": "Software",
+    "security-engineer": "Security",
+    "support-engineer": "Support",
+    "systems-engineer": "Systems",
+    "qa-engineer": "QA",
+}
+```
+
+Used to format engineering role titles (e.g., "Software Engineer", "Security Engineer").
+
+### Adding Engineer Types
+
+1. Add entry to `ENGINEER_TYPES`
+2. Add corresponding entry to `ROLE_SKILLS`
+3. Ensure `ROLE_TITLES["engineering"]` uses `{type}` placeholder
+4. Regenerate pages
+
+## SFIA Skill Codes
+
+Skill codes reference entries in the SFIA CSV:
+
+- **Location**: `input/sfia-9_current-standard_en_250129(Skills).csv`
+- **Validation**: Parser validates codes exist
+- **Missing codes**: Script warns but continues if code not found
+
+Common skill codes:
+- `SWDN` - Software Design
+- `PROG` - Programming/Software Development
+- `ARCH` - Solution Architecture
+- `DBAD` - Database Administration
+- `DEPL` - Release and Deployment
+- `IRMG` - Information Risk Management
+- `SCTY` - Information Security
+- `PENT` - Penetration Testing
+- And many more...
+
+## Modifying Role Definitions
+
+### Workflow
+
+1. **Edit dictionaries** in `scripts/generate_pages.py`
+2. **Regenerate pages**: `venv/bin/python3 scripts/generate_pages.py`
+3. **Update navigation** in `mkdocs.yml` if adding new roles
+4. **Test pages** - verify content and links
+5. **Commit changes** - script + generated pages together
+
+### Example: Adding a Skill
+
+```python
+# Before
+"software-engineer": ["SWDN", "PROG", "ARCH", "DBAD", "DEPL"],
+
+# After
+"software-engineer": ["SWDN", "PROG", "ARCH", "DBAD", "DEPL", "TEST"],
+```
+
+Then regenerate pages.
+
+### Example: Adding a Role
+
+```python
+# Add to ROLE_SKILLS
+"devops-engineer": ["DEPL", "ITOP", "SYSP", "CHMG"],
+
+# Add to ENGINEER_TYPES
+"devops-engineer": "DevOps",
+
+# ROLE_TITLES already supports it (uses {type} placeholder)
+```
+
+Then regenerate pages and update navigation.
+
+## Reference
+
+- Role definitions: [@scripts/generate_pages.py](scripts/generate_pages.py)
+- SFIA parser: [@scripts/parse_sfia.py](scripts/parse_sfia.py)
+- SFIA CSV: `input/sfia-9_current-standard_en_250129(Skills).csv`
