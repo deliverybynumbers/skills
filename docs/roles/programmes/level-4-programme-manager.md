@@ -6,9 +6,9 @@
 
 ## Role Overview
 
-**Scope Summary:** A technical leader who guides and enables others while delivering significant technical contributions.
+**Scope Summary:** A programme leader who guides and enables programme delivery while delivering significant programme contributions.
 
-Lead Engineers combine strong technical skills with leadership capabilities. They enable others to succeed while continuing to make significant technical contributions.
+Programme Managers combine strong programme management skills with leadership capabilities. They enable programme teams to succeed while continuing to make significant contributions to programme strategy and delivery.
 
 ---
 

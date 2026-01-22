@@ -6,9 +6,9 @@
 
 ## Role Overview
 
-**Scope Summary:** An exceptional technical leader recognised for outstanding contributions to engineering excellence.
+**Scope Summary:** An exceptional people leader recognised for outstanding contributions to engineering management excellence.
 
-Distinguished Engineers are exceptional technical leaders recognised for their outstanding contributions to engineering excellence and organisational impact.
+Directors of Engineering are exceptional people leaders recognised for their outstanding contributions to engineering management excellence, organisational culture, and strategic impact.
 
 ---
 

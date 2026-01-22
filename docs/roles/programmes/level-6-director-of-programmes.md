@@ -6,9 +6,9 @@
 
 ## Role Overview
 
-**Scope Summary:** An exceptional technical leader recognised for outstanding contributions to engineering excellence.
+**Scope Summary:** An exceptional programme leader recognised for outstanding contributions to programme excellence.
 
-Distinguished Engineers are exceptional technical leaders recognised for their outstanding contributions to engineering excellence and organisational impact.
+Directors of Programmes are exceptional programme leaders recognised for their outstanding contributions to programme excellence and organisational impact.
 
 ---
 

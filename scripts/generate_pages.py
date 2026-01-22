@@ -72,53 +72,130 @@ ENGINEER_TYPES = {
     "qa-engineer": "QA",
 }
 
-# Level-specific scope summaries and descriptions (from PDF)
-LEVEL_DESCRIPTIONS = {
+# Level-specific scope summaries and descriptions by career path
+ENGINEERING_LEVEL_DESCRIPTIONS = {
     1: {
         "scope_summary": "A new engineer at the start of their career, focussed on expanding their knowledge and skill set to further increase their impact within a team.",
         "description": "Associate Engineers are at the first stage of their software engineering career. They're contributing to the team's goals through executing on well-defined tasks, with support from more experienced engineers. As someone early in their career, they're focussed on increasing their Software Engineering skill set and knowledge at a high pace. So that they can start to deliver tasks with less support and progress towards \"Engineer\"."
     },
     2: {
         "scope_summary": "An engineer with high potential, developing the fundamentals they need to be successful in their team.",
-        "description": "Engineer engineers are in the earlier stages of their software engineering career. They're working on well-defined tasks and are supported by the team when stuck. They're expected to ask lots of questions. As someone progresses toward \"Senior Engineer\" they should start to gain confidence to pick up larger or less well-defined tasks with less required support."
+        "description": "Engineers are in the earlier stages of their software engineering career. They're working on well-defined tasks and are supported by the team when stuck. They're expected to ask lots of questions. As someone progresses toward \"Senior Engineer\" they should start to gain confidence to pick up larger or less well-defined tasks with less required support."
     },
-    # Note: The PDF only had descriptions for levels 1-2. For other levels, we'll use generic descriptions
-    # that can be customized later
+    3: {
+        "scope_summary": "An experienced engineer who works independently on complex tasks and contributes significantly to team success.",
+        "description": "Senior Engineers demonstrate strong technical skills and work independently on complex problems. They contribute to team success through their technical expertise and collaborative approach."
+    },
+    4: {
+        "scope_summary": "A technical leader who guides and enables others while delivering significant technical contributions.",
+        "description": "Lead Engineers combine strong technical skills with leadership capabilities. They enable others to succeed while continuing to make significant technical contributions."
+    },
+    5: {
+        "scope_summary": "A senior technical expert who influences engineering practices across the organisation.",
+        "description": "Principal Engineers are recognised technical experts who influence engineering practices, standards and approaches across the organisation."
+    },
+    6: {
+        "scope_summary": "An exceptional technical leader recognised for outstanding contributions to engineering excellence.",
+        "description": "Distinguished Engineers are exceptional technical leaders recognised for their outstanding contributions to engineering excellence and organisational impact."
+    },
+    7: {
+        "scope_summary": "The senior technical leader responsible for setting technical strategy and direction.",
+        "description": "The Chief Engineer sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence."
+    }
+}
+
+MANAGEMENT_LEVEL_DESCRIPTIONS = {
+    4: {
+        "scope_summary": "A people leader who guides and enables engineering teams while delivering significant management contributions.",
+        "description": "Engineering Managers combine strong technical understanding with leadership capabilities. They enable their teams to succeed while managing people, processes, and resources effectively."
+    },
+    5: {
+        "scope_summary": "A senior people leader who influences engineering management practices across the organisation.",
+        "description": "Senior Engineering Managers are recognised leaders who influence engineering management practices, team structures, and people development approaches across the organisation."
+    },
+    6: {
+        "scope_summary": "An exceptional people leader recognised for outstanding contributions to engineering management excellence.",
+        "description": "Directors of Engineering are exceptional people leaders recognised for their outstanding contributions to engineering management excellence, organisational culture, and strategic impact."
+    },
+    7: {
+        "scope_summary": "The senior people leader responsible for setting engineering management strategy and direction.",
+        "description": "The VP of Engineering sets engineering management strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence through effective people leadership."
+    }
+}
+
+PRODUCT_LEVEL_DESCRIPTIONS = {
+    3: {
+        "scope_summary": "An experienced product professional who works independently on complex product tasks and contributes significantly to product success.",
+        "description": "Business Analysts demonstrate strong analytical skills and work independently on complex product problems. They contribute to product success through their expertise in requirements, business modelling, and collaborative approach."
+    },
+    4: {
+        "scope_summary": "A product leader who guides and enables product development while delivering significant product contributions.",
+        "description": "Product Managers combine strong product skills with leadership capabilities. They enable product teams to succeed while continuing to make significant contributions to product strategy and delivery."
+    },
+    5: {
+        "scope_summary": "A senior product expert who influences product practices across the organisation.",
+        "description": "Senior Product Managers are recognised product experts who influence product practices, standards, and approaches across the organisation."
+    },
+    6: {
+        "scope_summary": "An exceptional product leader recognised for outstanding contributions to product excellence.",
+        "description": "Directors of Product are exceptional product leaders recognised for their outstanding contributions to product excellence and organisational impact."
+    },
+    7: {
+        "scope_summary": "The senior product leader responsible for setting product strategy and direction.",
+        "description": "The VP of Product sets product strategy and direction for the organisation, inspiring and mobilising teams to achieve product excellence."
+    }
+}
+
+PROGRAMMES_LEVEL_DESCRIPTIONS = {
+    2: {
+        "scope_summary": "A programme professional with high potential, developing the fundamentals they need to be successful in programme delivery.",
+        "description": "Project Assistants are in the earlier stages of their programme management career. They're working on well-defined tasks and are supported by the team when stuck. They're expected to ask lots of questions. As someone progresses toward \"Project Manager\" they should start to gain confidence to pick up larger or less well-defined tasks with less required support."
+    },
+    3: {
+        "scope_summary": "An experienced programme professional who works independently on complex project tasks and contributes significantly to project success.",
+        "description": "Project Managers demonstrate strong project management skills and work independently on complex project problems. They contribute to project success through their expertise in planning, coordination, and collaborative approach."
+    },
+    4: {
+        "scope_summary": "A programme leader who guides and enables programme delivery while delivering significant programme contributions.",
+        "description": "Programme Managers combine strong programme management skills with leadership capabilities. They enable programme teams to succeed while continuing to make significant contributions to programme strategy and delivery."
+    },
+    5: {
+        "scope_summary": "A senior programme expert who influences programme practices across the organisation.",
+        "description": "Senior Programme Managers are recognised programme experts who influence programme practices, standards, and approaches across the organisation."
+    },
+    6: {
+        "scope_summary": "An exceptional programme leader recognised for outstanding contributions to programme excellence.",
+        "description": "Directors of Programmes are exceptional programme leaders recognised for their outstanding contributions to programme excellence and organisational impact."
+    }
 }
 
 def get_level_description(level: int, role_path: str) -> Dict[str, str]:
-    """Get level-specific description from PDF or generate generic one."""
-    if level in LEVEL_DESCRIPTIONS:
-        return LEVEL_DESCRIPTIONS[level]
-
-    # Generic descriptions for levels not in PDF
-    generic_descriptions = {
-        3: {
-            "scope_summary": "An experienced engineer who works independently on complex tasks and contributes significantly to team success.",
-            "description": "Senior Engineers demonstrate strong technical skills and work independently on complex problems. They contribute to team success through their technical expertise and collaborative approach."
-        },
-        4: {
-            "scope_summary": "A technical leader who guides and enables others while delivering significant technical contributions.",
-            "description": "Lead Engineers combine strong technical skills with leadership capabilities. They enable others to succeed while continuing to make significant technical contributions."
-        },
-        5: {
-            "scope_summary": "A senior technical expert who influences engineering practices across the organisation.",
-            "description": "Principal Engineers are recognised technical experts who influence engineering practices, standards and approaches across the organisation."
-        },
-        6: {
-            "scope_summary": "An exceptional technical leader recognised for outstanding contributions to engineering excellence.",
-            "description": "Distinguished Engineers are exceptional technical leaders recognised for their outstanding contributions to engineering excellence and organisational impact."
-        },
-        7: {
-            "scope_summary": "The senior technical leader responsible for setting technical strategy and direction.",
-            "description": "The Chief Engineer sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence."
+    """Get level-specific description based on career path."""
+    # Select the appropriate description dictionary based on career path
+    if role_path == "engineering":
+        descriptions = ENGINEERING_LEVEL_DESCRIPTIONS
+    elif role_path == "management":
+        descriptions = MANAGEMENT_LEVEL_DESCRIPTIONS
+    elif role_path == "product":
+        descriptions = PRODUCT_LEVEL_DESCRIPTIONS
+    elif role_path == "programmes":
+        descriptions = PROGRAMMES_LEVEL_DESCRIPTIONS
+    else:
+        # Fallback for unknown paths
+        return {
+            "scope_summary": f"Level {level} role in the {role_path.title()} career path.",
+            "description": f"This role represents Level {level} in the {role_path.title()} career path."
         }
-    }
-
-    return generic_descriptions.get(level, {
+    
+    # Return the description if it exists, otherwise provide a fallback
+    if level in descriptions:
+        return descriptions[level]
+    
+    # Fallback for levels not defined in the path-specific descriptions
+    return {
         "scope_summary": f"Level {level} role in the {role_path.title()} career path.",
         "description": f"This role represents Level {level} in the {role_path.title()} career path."
-    })
+    }
 
 
 def generate_role_page(

@@ -6,9 +6,9 @@
 
 ## Role Overview
 
-**Scope Summary:** The senior technical leader responsible for setting technical strategy and direction.
+**Scope Summary:** The senior people leader responsible for setting engineering management strategy and direction.
 
-The Chief Engineer sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence.
+The VP of Engineering sets engineering management strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence through effective people leadership.
 
 ---
 

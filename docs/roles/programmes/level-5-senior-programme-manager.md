@@ -6,9 +6,9 @@
 
 ## Role Overview
 
-**Scope Summary:** A senior technical expert who influences engineering practices across the organisation.
+**Scope Summary:** A senior programme expert who influences programme practices across the organisation.
 
-Principal Engineers are recognised technical experts who influence engineering practices, standards and approaches across the organisation.
+Senior Programme Managers are recognised programme experts who influence programme practices, standards, and approaches across the organisation.
 
 ---
 

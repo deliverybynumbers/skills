@@ -6,9 +6,9 @@
 
 ## Role Overview
 
-**Scope Summary:** A senior technical expert who influences engineering practices across the organisation.
+**Scope Summary:** A senior people leader who influences engineering management practices across the organisation.
 
-Principal Engineers are recognised technical experts who influence engineering practices, standards and approaches across the organisation.
+Senior Engineering Managers are recognised leaders who influence engineering management practices, team structures, and people development approaches across the organisation.
 
 ---
 

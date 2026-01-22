@@ -6,9 +6,9 @@
 
 ## Role Overview
 
-**Scope Summary:** The senior technical leader responsible for setting technical strategy and direction.
+**Scope Summary:** The senior product leader responsible for setting product strategy and direction.
 
-The Chief Engineer sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence.
+The VP of Product sets product strategy and direction for the organisation, inspiring and mobilising teams to achieve product excellence.
 
 ---
 
