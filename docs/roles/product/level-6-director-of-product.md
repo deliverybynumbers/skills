@@ -230,5 +230,5 @@ Sets the direction and standards for delivery management across the organisation
 
 **Career Path Navigation:** ← [Previous: Senior Product Manager](level-5-senior-product-manager.md) | [Next: VP of Product](level-7-vp-of-product.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

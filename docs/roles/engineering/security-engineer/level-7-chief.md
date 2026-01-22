@@ -172,5 +172,5 @@ Assesses suppliers' development and testing capabilities. Manages client relatio
 
 **Career Path Navigation:** ← [Previous: Distinguished Security Engineer](level-6-distinguished.md)
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

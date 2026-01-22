@@ -172,5 +172,5 @@ Identifies needs and implements new approaches for penetration testing. Contribu
 
 **Career Path Navigation:** ← [Previous: Lead Security Engineer](level-4-lead.md) | [Next: Distinguished Security Engineer](level-6-distinguished.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

@@ -233,5 +233,5 @@ Monitors deployed applications and reports issues. Assists in rolling back deplo
 
 **Career Path Navigation:** ← [Previous: Associate Software Engineer](level-1-associate.md) | [Next: Senior Software Engineer](level-3-senior.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

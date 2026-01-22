@@ -173,5 +173,5 @@ Plans and leads content creation for strategic, large and complex programmes.
 
 **Career Path Navigation:** ← [Previous: Principal Support Engineer](level-5-principal.md) | [Next: Chief Support Engineer](level-7-chief.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

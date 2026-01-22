@@ -98,5 +98,5 @@ Produces reports as appropriate for portfolio governance, including making recom
 
 **Career Path Navigation:** ← [Previous: Project Manager](level-3-project-manager.md) | [Next: Senior Programme Manager](level-5-senior-programme-manager.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

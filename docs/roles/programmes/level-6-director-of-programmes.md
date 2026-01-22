@@ -99,5 +99,5 @@ Collects and summarises portfolio measures, reporting on status and ensuring com
 
 **Career Path Navigation:** ← [Previous: Senior Programme Manager](level-5-senior-programme-manager.md)
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

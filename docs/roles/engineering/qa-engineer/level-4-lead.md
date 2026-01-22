@@ -208,5 +208,5 @@ Analyses and reports on test activities, results, issues and risks including the
 
 **Career Path Navigation:** ← [Previous: Senior QA Engineer](level-3-senior.md) | [Next: Principal QA Engineer](level-5-principal.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

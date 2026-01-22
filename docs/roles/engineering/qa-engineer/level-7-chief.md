@@ -208,5 +208,5 @@ Develops organisational policies, standards and guidelines for acceptance testin
 
 **Career Path Navigation:** ← [Previous: Distinguished QA Engineer](level-6-distinguished.md)
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

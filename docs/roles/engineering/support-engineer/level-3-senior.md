@@ -173,5 +173,5 @@ Makes informed decisions about the best way to present information to an audienc
 
 **Career Path Navigation:** ← [Previous: Support Engineer](level-2-engineer.md) | [Next: Lead Support Engineer](level-4-lead.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

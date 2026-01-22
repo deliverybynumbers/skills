@@ -233,5 +233,5 @@ Monitors deployed applications and reports issues. Assists in rolling back deplo
 
 **Career Path Navigation:** [Next: Software Engineer](level-2-engineer.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

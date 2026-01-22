@@ -203,5 +203,5 @@ Assists in collecting feedback from acceptance testing.
 
 **Career Path Navigation:** [Next: QA Engineer](level-2-engineer.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

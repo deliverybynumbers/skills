@@ -170,5 +170,5 @@ Analyses and reports on penetration testing activities, results, issues and risk
 
 **Career Path Navigation:** ← [Previous: Security Engineer](level-2-engineer.md) | [Next: Lead Security Engineer](level-4-lead.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

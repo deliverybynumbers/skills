@@ -205,5 +205,5 @@ Analyses and reports on test activities, results, issues and risks.
 
 **Career Path Navigation:** ← [Previous: QA Engineer](level-2-engineer.md) | [Next: Lead QA Engineer](level-4-lead.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

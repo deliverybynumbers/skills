@@ -196,5 +196,5 @@ Implements supplier management-related service improvement initiatives and progr
 
 **Career Path Navigation:** [Next: Senior Engineering Manager](level-5-senior-engineering-manager.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

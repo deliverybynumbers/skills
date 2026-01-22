@@ -230,5 +230,5 @@ Supports a collaborative and productive working environment, demonstrating appro
 
 **Career Path Navigation:** [Next: Product Manager](level-4-product-manager.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

@@ -197,5 +197,5 @@ Ensures commercial value from contracts and represents the organisation in signi
 
 **Career Path Navigation:** ← [Previous: Director of Engineering](level-6-director-of-engineering.md)
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

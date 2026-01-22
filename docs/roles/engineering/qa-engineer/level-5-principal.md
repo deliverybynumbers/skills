@@ -208,5 +208,5 @@ Ensures tests and results are documented, analysed and reported, highlighting is
 
 **Career Path Navigation:** ← [Previous: Lead QA Engineer](level-4-lead.md) | [Next: Distinguished QA Engineer](level-6-distinguished.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

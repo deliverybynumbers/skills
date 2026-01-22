@@ -318,14 +318,12 @@ def generate_role_page(
     if nav_links:
         content += "**Career Path Navigation:** " + " | ".join(nav_links) + "\n\n"
     
-    # Link back to index and about
+    # Link back to index
     if role_path == "engineering":
         index_path = "../../../index.md"
-        about_path = "../../../about.md"
     else:
         index_path = "../../index.md"
-        about_path = "../../about.md"
-    content += f"**Back to:** [Home]({index_path}) | [About the Framework]({about_path})\n\n"
+    content += f"**Back to:** [Home]({index_path})\n\n"
     
     # Write file
     filename = f"level-{level}-{role_type.replace('_', '-')}.md"

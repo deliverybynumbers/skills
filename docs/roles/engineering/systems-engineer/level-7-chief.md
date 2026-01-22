@@ -295,5 +295,5 @@ Promotes organisational collaboration and ensures that incident management proce
 
 **Career Path Navigation:** ← [Previous: Distinguished Systems Engineer](level-6-distinguished.md)
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

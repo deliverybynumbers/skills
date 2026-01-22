@@ -172,5 +172,5 @@ Reviews work of others and takes responsibility for ensuring appropriate publica
 
 **Career Path Navigation:** ← [Previous: Senior Support Engineer](level-3-senior.md) | [Next: Principal Support Engineer](level-5-principal.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

@@ -236,5 +236,5 @@ Collaborates with cross-functional teams.
 
 **Career Path Navigation:** ← [Previous: Senior Software Engineer](level-3-senior.md) | [Next: Principal Software Engineer](level-5-principal.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

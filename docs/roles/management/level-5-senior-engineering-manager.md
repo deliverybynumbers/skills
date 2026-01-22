@@ -196,5 +196,5 @@ Manages implementation of supplier service improvement actions. Identifies const
 
 **Career Path Navigation:** ← [Previous: Engineering Manager](level-4-engineering-manager.md) | [Next: Director of Engineering](level-6-director-of-engineering.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

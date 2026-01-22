@@ -98,5 +98,5 @@ Produces reports as appropriate for portfolio governance, including making recom
 
 **Career Path Navigation:** ← [Previous: Project Assistant](level-2-project-assistant.md) | [Next: Programme Manager](level-4-programme-manager.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

@@ -169,5 +169,5 @@ Executes pre-planned testing activities under supervision and records findings.
 
 **Career Path Navigation:** [Next: Support Engineer](level-2-engineer.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

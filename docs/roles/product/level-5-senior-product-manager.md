@@ -230,5 +230,5 @@ Drives the continuous improvement of delivery processes and practices across the
 
 **Career Path Navigation:** ← [Previous: Product Manager](level-4-product-manager.md) | [Next: Director of Product](level-6-director-of-product.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

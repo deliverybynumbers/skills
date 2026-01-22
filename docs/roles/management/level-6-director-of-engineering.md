@@ -197,5 +197,5 @@ Manages risks and assures the quality of the services delivered by suppliers.
 
 **Career Path Navigation:** ← [Previous: Senior Engineering Manager](level-5-senior-engineering-manager.md) | [Next: VP of Engineering](level-7-vp-of-engineering.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

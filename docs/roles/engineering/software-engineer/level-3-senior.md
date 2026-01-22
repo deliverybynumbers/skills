@@ -236,5 +236,5 @@ Collaborates with release management and operations teams.
 
 **Career Path Navigation:** ← [Previous: Software Engineer](level-2-engineer.md) | [Next: Lead Software Engineer](level-4-lead.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

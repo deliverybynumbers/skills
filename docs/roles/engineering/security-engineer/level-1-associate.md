@@ -170,5 +170,5 @@ Helps document and report on test results, findings and potential security risks
 
 **Career Path Navigation:** [Next: Security Engineer](level-2-engineer.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

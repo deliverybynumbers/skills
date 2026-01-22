@@ -236,5 +236,5 @@ Defines monitoring and alert strategies for deployed applications.
 
 **Career Path Navigation:** ← [Previous: Lead Software Engineer](level-4-lead.md) | [Next: Distinguished Software Engineer](level-6-distinguished.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

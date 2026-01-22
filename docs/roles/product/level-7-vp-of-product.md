@@ -230,5 +230,5 @@ Sets the direction and standards for delivery management across the organisation
 
 **Career Path Navigation:** ← [Previous: Director of Product](level-6-director-of-product.md)
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

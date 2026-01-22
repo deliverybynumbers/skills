@@ -174,5 +174,5 @@ Oversees the review and approval of materials to enable requirements to be satis
 
 **Career Path Navigation:** ← [Previous: Lead Support Engineer](level-4-lead.md) | [Next: Distinguished Support Engineer](level-6-distinguished.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

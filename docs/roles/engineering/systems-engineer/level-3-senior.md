@@ -290,5 +290,5 @@ Facilitates recovery, following resolution of incidents. Documents, communicates
 
 **Career Path Navigation:** ← [Previous: Systems Engineer](level-2-engineer.md) | [Next: Lead Systems Engineer](level-4-lead.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

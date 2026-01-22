@@ -234,5 +234,5 @@ Drives the adoption of new deployment techniques and technologies. Collaborates 
 
 **Career Path Navigation:** ← [Previous: Principal Software Engineer](level-5-principal.md) | [Next: Chief Software Engineer](level-7-chief.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

@@ -234,5 +234,5 @@ Drives the adoption of new deployment techniques and technologies. Collaborates 
 
 **Career Path Navigation:** ← [Previous: Distinguished Software Engineer](level-6-distinguished.md)
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

@@ -289,5 +289,5 @@ Assists in monitoring incident queues and escalates issues according to procedur
 
 **Career Path Navigation:** [Next: Systems Engineer](level-2-engineer.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

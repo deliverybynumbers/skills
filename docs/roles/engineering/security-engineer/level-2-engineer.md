@@ -170,5 +170,5 @@ Helps document and report on test results, findings and potential security risks
 
 **Career Path Navigation:** ← [Previous: Associate Security Engineer](level-1-associate.md) | [Next: Senior Security Engineer](level-3-senior.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

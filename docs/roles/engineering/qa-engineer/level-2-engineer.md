@@ -206,5 +206,5 @@ Assists in collecting feedback from acceptance testing.
 
 **Career Path Navigation:** ← [Previous: Associate QA Engineer](level-1-associate.md) | [Next: Senior QA Engineer](level-3-senior.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

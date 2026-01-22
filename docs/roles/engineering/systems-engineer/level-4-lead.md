@@ -293,5 +293,5 @@ Supports team members in the correct use of the incident process.
 
 **Career Path Navigation:** ← [Previous: Senior Systems Engineer](level-3-senior.md) | [Next: Principal Systems Engineer](level-5-principal.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

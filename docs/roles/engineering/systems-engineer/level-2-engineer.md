@@ -290,5 +290,5 @@ Assists in maintaining records and documentation related to incidents.
 
 **Career Path Navigation:** ← [Previous: Associate Systems Engineer](level-1-associate.md) | [Next: Senior Systems Engineer](level-3-senior.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

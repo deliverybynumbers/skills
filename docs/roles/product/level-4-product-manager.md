@@ -230,5 +230,5 @@ Ensures the quality of deliverables. Participates in reviews and contributes to 
 
 **Career Path Navigation:** ← [Previous: Business Analyst](level-3-business-analyst.md) | [Next: Senior Product Manager](level-5-senior-product-manager.md) →
 
-**Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
+**Back to:** [Home](../../index.md)
 

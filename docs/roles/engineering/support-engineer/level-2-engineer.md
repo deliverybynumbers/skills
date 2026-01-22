@@ -171,5 +171,5 @@ Applies guidelines and standards to moderate content from others, escalating whe
 
 **Career Path Navigation:** ← [Previous: Associate Support Engineer](level-1-associate.md) | [Next: Senior Support Engineer](level-3-senior.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 

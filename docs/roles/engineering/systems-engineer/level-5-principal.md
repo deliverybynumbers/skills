@@ -294,5 +294,5 @@ Develops, maintains and tests incident management policy and procedures. Ensures
 
 **Career Path Navigation:** ← [Previous: Lead Systems Engineer](level-4-lead.md) | [Next: Distinguished Systems Engineer](level-6-distinguished.md) →
 
-**Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
+**Back to:** [Home](../../../index.md)
 
