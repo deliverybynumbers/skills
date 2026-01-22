@@ -96,7 +96,7 @@ Produces reports as appropriate for portfolio governance, including making recom
 
 ## Navigation
 
-**Career Path Navigation:** ← [Previous: Programme Manager](level-4-programme-manager.md) | [Next: Director of Projects](level-6-director-of-projects.md) →
+**Career Path Navigation:** ← [Previous: Programme Manager](level-4-programme-manager.md) | [Next: Director of Programmes](level-6-director-of-programmes.md) →
 
 **Back to:** [Home](../../index.md) | [About the Framework](../../about.md)
 

@@ -1,4 +1,4 @@
-# Director of Projects
+# Director of Programmes
 
 **Level 6** | **Career Path:** Programmes
 

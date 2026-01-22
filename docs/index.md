@@ -104,7 +104,7 @@ Project and programme management (Levels 2-6):
 - Level 3: Project Manager
 - Level 4: Programme Manager
 - Level 5: Senior Programme Manager
-- Level 6: Director of Projects
+- Level 6: Director of Programmes
 
 ## Using This Framework
 

@@ -54,7 +54,7 @@ ROLE_TITLES = {
         3: "Project Manager",
         4: "Programme Manager",
         5: "Senior Programme Manager",
-        6: "Director of Projects",
+        6: "Director of Programmes",
     },
 }
 
@@ -289,7 +289,7 @@ def generate_role_page(
             3: "level-3-project-manager.md",
             4: "level-4-programme-manager.md",
             5: "level-5-senior-programme-manager.md",
-            6: "level-6-director-of-projects.md"
+            6: "level-6-director-of-programmes.md"
         }
     else:
         min_level, max_level = 1, 7
