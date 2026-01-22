@@ -134,7 +134,7 @@ def get_level_description(level: int, role_path: str) -> Dict[str, str]:
     """Get level-specific description from PDF or generate generic one."""
     if level in LEVEL_DESCRIPTIONS:
         return LEVEL_DESCRIPTIONS[level]
-    
+
     # Generic descriptions for levels not in PDF
     generic_descriptions = {
         3: {
@@ -158,7 +158,7 @@ def get_level_description(level: int, role_path: str) -> Dict[str, str]:
             "description": "The Chief Engineer sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence."
         }
     }
-    
+
     return generic_descriptions.get(level, {
         "scope_summary": f"Level {level} role in the {role_path.title()} career path.",
         "description": f"This role represents Level {level} in the {role_path.title()} career path."
@@ -174,7 +174,7 @@ def generate_role_page(
     output_dir: Path,
 ) -> None:
     """Generate a markdown page for a specific role."""
-    
+
     # Get role title
     if role_path == "engineering":
         engineer_type = ENGINEER_TYPES.get(role_type, role_type.title())
@@ -182,41 +182,41 @@ def generate_role_page(
         title = title_template.format(type=engineer_type)
     else:
         title = ROLE_TITLES[role_path][level]
-    
+
     # Create output directory
     output_dir.mkdir(parents=True, exist_ok=True)
-    
+
     # Generate markdown content
     content = f"# {title}\n\n"
     content += f"**Level {level}** | **Career Path:** {role_path.title()}\n\n"
-    
+
     if role_path == "engineering":
         content += f"**Engineer Type:** {engineer_type}\n\n"
-    
+
     content += "---\n\n"
-    
+
     # Add framework overview and guidance
     content += FRAMEWORK_OVERVIEW
-    
+
     # Add level-specific scope summary and description
     level_desc = get_level_description(level, role_path)
     content += "## Role Overview\n\n"
     content += f"**Scope Summary:** {level_desc['scope_summary']}\n\n"
     content += f"{level_desc['description']}\n\n"
-    
+
     content += "---\n\n"
     content += "## Required SFIA Skills\n\n"
     content += "The following SFIA skills define the expected skills and behaviors for this role at this level:\n\n"
-    
+
     # Add each skill
     for skill_code in role_skills:
         if skill_code not in skills:
             print(f"Warning: Skill {skill_code} not found in SFIA data", file=sys.stderr)
             continue
-        
+
         skill = skills[skill_code]
         level_desc = skill.get_level_description(level)
-        
+
         if not level_desc:
             # Try to find the closest available level
             available_levels = sorted(skill.level_descriptions.keys())
@@ -227,32 +227,32 @@ def generate_role_page(
                     level_desc = skill.get_level_description(max(suitable_levels))
                 else:
                     level_desc = skill.get_level_description(min(available_levels))
-        
+
         content += f"### {skill.name} ({skill_code})\n\n"
-        
+
         if skill.url:
             content += f"**SFIA Reference:** [{skill_code}]({skill.url})\n\n"
-        
+
         content += f"**Category:** {skill.category} | **Subcategory:** {skill.subcategory}\n\n"
-        
+
         content += f"**Overall Description:**\n\n"
         content += f"{skill.overall_description}\n\n"
-        
+
         if skill.guidance_notes:
             content += f"**Guidance Notes:**\n\n"
             content += f"{skill.guidance_notes}\n\n"
-        
+
         if level_desc:
             content += f"**Level {level} Attainment:**\n\n"
             content += f"{level_desc}\n\n"
         else:
             content += f"*Note: Level {level} description not available for this skill.*\n\n"
-        
+
         content += "---\n\n"
-    
+
     # Add navigation links
     content += "## Navigation\n\n"
-    
+
     # Determine valid level range for this path
     if role_path == "engineering":
         min_level, max_level = 1, 7
@@ -294,9 +294,9 @@ def generate_role_page(
     else:
         min_level, max_level = 1, 7
         level_filenames = {}
-    
+
     nav_links = []
-    
+
     # Previous level link
     if level > min_level:
         prev_level = level - 1
@@ -305,7 +305,7 @@ def generate_role_page(
         if role_path == "engineering":
             prev_title_text = prev_title_text.format(type=engineer_type)
         nav_links.append(f"← [Previous: {prev_title_text}]({prev_filename})")
-    
+
     # Next level link
     if level < max_level:
         next_level = level + 1
@@ -314,17 +314,17 @@ def generate_role_page(
         if role_path == "engineering":
             next_title_text = next_title_text.format(type=engineer_type)
         nav_links.append(f"[Next: {next_title_text}]({next_filename}) →")
-    
+
     if nav_links:
         content += "**Career Path Navigation:** " + " | ".join(nav_links) + "\n\n"
-    
+
     # Link back to index
     if role_path == "engineering":
         index_path = "../../../index.md"
     else:
         index_path = "../../index.md"
     content += f"**Back to:** [Home]({index_path})\n\n"
-    
+
     # Write file
     filename = f"level-{level}-{role_type.replace('_', '-')}.md"
     if role_path == "engineering":
@@ -347,7 +347,7 @@ def generate_role_page(
         # For other paths, use descriptive names
         slug = title.lower().replace(" ", "-").replace(" of ", "-of-")
         filename = f"level-{level}-{slug}.md"
-    
+
     output_file = output_dir / filename
     output_file.write_text(content, encoding='utf-8')
     print(f"Generated: {output_file}")
@@ -359,18 +359,18 @@ def main():
     repo_root = script_dir.parent
     csv_path = repo_root / "input" / "sfia-9_current-standard_en_250129(Skills).csv"
     docs_dir = repo_root / "docs"
-    
+
     if not csv_path.exists():
         print(f"Error: CSV file not found at {csv_path}", file=sys.stderr)
         sys.exit(1)
-    
+
     print("Parsing SFIA CSV...")
     skills = parse_sfia_csv(csv_path)
     print(f"Parsed {len(skills)} skills\n")
-    
+
     # Generate engineering role pages (levels 1-7)
     print("Generating engineering role pages...")
-    for engineer_type in ["software-engineer", "security-engineer", "support-engineer", 
+    for engineer_type in ["software-engineer", "security-engineer", "support-engineer",
                           "systems-engineer", "qa-engineer"]:
         role_skills = ROLE_SKILLS[engineer_type]
         for level in range(1, 8):
@@ -383,7 +383,7 @@ def main():
                 role_skills,
                 output_dir,
             )
-    
+
     # Generate management role pages (levels 4-7)
     print("\nGenerating management role pages...")
     role_skills = ROLE_SKILLS["people-management"]
@@ -397,7 +397,7 @@ def main():
             role_skills,
             output_dir,
         )
-    
+
     # Generate product role pages (levels 3-7)
     print("\nGenerating product role pages...")
     role_skills = ROLE_SKILLS["product-management"]
@@ -411,7 +411,7 @@ def main():
             role_skills,
             output_dir,
         )
-    
+
     # Generate programmes role pages (levels 2-6)
     print("\nGenerating programmes role pages...")
     # Note: Programmes roles might need different skills - using a placeholder for now
@@ -427,7 +427,7 @@ def main():
             role_skills,
             output_dir,
         )
-    
+
     print("\nDone! All role pages generated.")
 
 
