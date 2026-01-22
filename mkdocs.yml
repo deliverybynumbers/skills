@@ -3,86 +3,86 @@ site_description: A career framework for tech departments using SFIA skills defi
 site_url: https://deliverybynumbers.github.io/skills/
 
 theme:
-  name: shadcn
-  show_title: true # show the title in the top bar
-  show_stargazers: false # show the stargazers in the top bar
-  pygments_style: # default styles
-    light: shadcn-light
-    dark: github-dark
-  icon: heroicons:rocket-launch # use the shadcn svg if not defined
-  topbar_sections: true # NEW!
-  katex_options: {}
-  show_datetime: false
+    name: shadcn
+    show_title: true # show the title in the top bar
+    show_stargazers: false # show the stargazers in the top bar
+    pygments_style: # default styles
+        light: shadcn-light
+        dark: github-dark
+    icon: heroicons:rocket-launch # use the shadcn svg if not defined
+    topbar_sections: true # NEW!
+    katex_options: {}
+    show_datetime: false
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - attr_list
-  - md_in_html
+    - pymdownx.highlight:
+          anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+          alternate_style: true
+    - attr_list
+    - md_in_html
 
 nav:
-  - Home: index.md
-  - Using the Framework: using-the-framework.md
-  - Engineering Roles:
-      - Software Engineer:
-          - Associate Engineer: roles/engineering/software-engineer/level-1-associate.md
-          - Engineer: roles/engineering/software-engineer/level-2-engineer.md
-          - Senior Engineer: roles/engineering/software-engineer/level-3-senior.md
-          - Lead Engineer: roles/engineering/software-engineer/level-4-lead.md
-          - Principal Engineer: roles/engineering/software-engineer/level-5-principal.md
-          - Distinguished Engineer: roles/engineering/software-engineer/level-6-distinguished.md
-          - Chief Engineer: roles/engineering/software-engineer/level-7-chief.md
-      - Security Engineer:
-          - Associate Engineer: roles/engineering/security-engineer/level-1-associate.md
-          - Engineer: roles/engineering/security-engineer/level-2-engineer.md
-          - Senior Engineer: roles/engineering/security-engineer/level-3-senior.md
-          - Lead Engineer: roles/engineering/security-engineer/level-4-lead.md
-          - Principal Engineer: roles/engineering/security-engineer/level-5-principal.md
-          - Distinguished Engineer: roles/engineering/security-engineer/level-6-distinguished.md
-          - Chief Engineer: roles/engineering/security-engineer/level-7-chief.md
-      - Support Engineer:
-          - Associate Engineer: roles/engineering/support-engineer/level-1-associate.md
-          - Engineer: roles/engineering/support-engineer/level-2-engineer.md
-          - Senior Engineer: roles/engineering/support-engineer/level-3-senior.md
-          - Lead Engineer: roles/engineering/support-engineer/level-4-lead.md
-          - Principal Engineer: roles/engineering/support-engineer/level-5-principal.md
-          - Distinguished Engineer: roles/engineering/support-engineer/level-6-distinguished.md
-          - Chief Engineer: roles/engineering/support-engineer/level-7-chief.md
-      - Systems Engineer:
-          - Associate Engineer: roles/engineering/systems-engineer/level-1-associate.md
-          - Engineer: roles/engineering/systems-engineer/level-2-engineer.md
-          - Senior Engineer: roles/engineering/systems-engineer/level-3-senior.md
-          - Lead Engineer: roles/engineering/systems-engineer/level-4-lead.md
-          - Principal Engineer: roles/engineering/systems-engineer/level-5-principal.md
-          - Distinguished Engineer: roles/engineering/systems-engineer/level-6-distinguished.md
-          - Chief Engineer: roles/engineering/systems-engineer/level-7-chief.md
-      - QA Engineer:
-          - Associate Engineer: roles/engineering/qa-engineer/level-1-associate.md
-          - Engineer: roles/engineering/qa-engineer/level-2-engineer.md
-          - Senior Engineer: roles/engineering/qa-engineer/level-3-senior.md
-          - Lead Engineer: roles/engineering/qa-engineer/level-4-lead.md
-          - Principal Engineer: roles/engineering/qa-engineer/level-5-principal.md
-          - Distinguished Engineer: roles/engineering/qa-engineer/level-6-distinguished.md
-          - Chief Engineer: roles/engineering/qa-engineer/level-7-chief.md
-  - People Management Roles:
-      - Engineering Manager: roles/management/level-4-engineering-manager.md
-      - Senior Engineering Manager: roles/management/level-5-senior-engineering-manager.md
-      - Director of Engineering: roles/management/level-6-director-of-engineering.md
-      - VP of Engineering: roles/management/level-7-vp-of-engineering.md
-  - Product ManagementRoles:
-      - Business Analyst: roles/product/level-3-business-analyst.md
-      - Level 4 - Product Manager: roles/product/level-4-product-manager.md
-      - Senior Product Manager: roles/product/level-5-senior-product-manager.md
-      - Director of Product: roles/product/level-6-director-of-product.md
-      - VP of Product: roles/product/level-7-vp-of-product.md
-  - Programme Management Roles:
-      - Project Assistant: roles/programmes/level-2-project-assistant.md
-      - Project Manager: roles/programmes/level-3-project-manager.md
-      - Programme Manager: roles/programmes/level-4-programme-manager.md
-      - Senior Programme Manager: roles/programmes/level-5-senior-programme-manager.md
-      - Director of Programmes: roles/programmes/level-6-director-of-programmes.md
+    - Home: index.md
+    - Using the Framework: using-the-framework.md
+    - Engineering Roles:
+          - Software Engineer:
+                - Associate Engineer: roles/engineering/software-engineer/level-1-associate.md
+                - Engineer: roles/engineering/software-engineer/level-2-engineer.md
+                - Senior Engineer: roles/engineering/software-engineer/level-3-senior.md
+                - Lead Engineer: roles/engineering/software-engineer/level-4-lead.md
+                - Principal Engineer: roles/engineering/software-engineer/level-5-principal.md
+                - Distinguished Engineer: roles/engineering/software-engineer/level-6-distinguished.md
+                - Chief Engineer: roles/engineering/software-engineer/level-7-chief.md
+          - Security Engineer:
+                - Associate Engineer: roles/engineering/security-engineer/level-1-associate.md
+                - Engineer: roles/engineering/security-engineer/level-2-engineer.md
+                - Senior Engineer: roles/engineering/security-engineer/level-3-senior.md
+                - Lead Engineer: roles/engineering/security-engineer/level-4-lead.md
+                - Principal Engineer: roles/engineering/security-engineer/level-5-principal.md
+                - Distinguished Engineer: roles/engineering/security-engineer/level-6-distinguished.md
+                - Chief Engineer: roles/engineering/security-engineer/level-7-chief.md
+          - Support Engineer:
+                - Associate Engineer: roles/engineering/support-engineer/level-1-associate.md
+                - Engineer: roles/engineering/support-engineer/level-2-engineer.md
+                - Senior Engineer: roles/engineering/support-engineer/level-3-senior.md
+                - Lead Engineer: roles/engineering/support-engineer/level-4-lead.md
+                - Principal Engineer: roles/engineering/support-engineer/level-5-principal.md
+                - Distinguished Engineer: roles/engineering/support-engineer/level-6-distinguished.md
+                - Chief Engineer: roles/engineering/support-engineer/level-7-chief.md
+          - Systems Engineer:
+                - Associate Engineer: roles/engineering/systems-engineer/level-1-associate.md
+                - Engineer: roles/engineering/systems-engineer/level-2-engineer.md
+                - Senior Engineer: roles/engineering/systems-engineer/level-3-senior.md
+                - Lead Engineer: roles/engineering/systems-engineer/level-4-lead.md
+                - Principal Engineer: roles/engineering/systems-engineer/level-5-principal.md
+                - Distinguished Engineer: roles/engineering/systems-engineer/level-6-distinguished.md
+                - Chief Engineer: roles/engineering/systems-engineer/level-7-chief.md
+          - QA Engineer:
+                - Associate Engineer: roles/engineering/qa-engineer/level-1-associate.md
+                - Engineer: roles/engineering/qa-engineer/level-2-engineer.md
+                - Senior Engineer: roles/engineering/qa-engineer/level-3-senior.md
+                - Lead Engineer: roles/engineering/qa-engineer/level-4-lead.md
+                - Principal Engineer: roles/engineering/qa-engineer/level-5-principal.md
+                - Distinguished Engineer: roles/engineering/qa-engineer/level-6-distinguished.md
+                - Chief Engineer: roles/engineering/qa-engineer/level-7-chief.md
+    - People Management Roles:
+          - Engineering Manager: roles/management/level-4-engineering-manager.md
+          - Senior Engineering Manager: roles/management/level-5-senior-engineering-manager.md
+          - Director of Engineering: roles/management/level-6-director-of-engineering.md
+          - VP of Engineering: roles/management/level-7-vp-of-engineering.md
+    - Product ManagementRoles:
+          - Business Analyst: roles/product/level-3-business-analyst.md
+          - Level 4 - Product Manager: roles/product/level-4-product-manager.md
+          - Senior Product Manager: roles/product/level-5-senior-product-manager.md
+          - Director of Product: roles/product/level-6-director-of-product.md
+          - VP of Product: roles/product/level-7-vp-of-product.md
+    - Programme Management Roles:
+          - Project Assistant: roles/programmes/level-2-project-assistant.md
+          - Project Manager: roles/programmes/level-3-project-manager.md
+          - Programme Manager: roles/programmes/level-4-programme-manager.md
+          - Senior Programme Manager: roles/programmes/level-5-senior-programme-manager.md
+          - Director of Programmes: roles/programmes/level-6-director-of-programmes.md
