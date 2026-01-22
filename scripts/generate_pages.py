@@ -15,8 +15,13 @@ from parse_sfia import parse_sfia_csv, SFIASkill
 
 
 # Role definitions: mapping role types to their required SFIA skill codes
+# Note: Some skills are level-specific (e.g., senior leadership skills for levels 6-7)
 ROLE_SKILLS = {
-    "software-engineer": ["SWDN", "PROG", "ARCH", "DBAD", "DEPL"],
+    "software-engineer": {
+        "base": ["SWDN", "PROG", "ARCH", "DBAD", "DEPL"],  # Levels 2-5
+        "senior": ["SLEN", "DLMG"],  # Add for levels 6-7 (lifecycle engineering, development management)
+        "strategic": ["STPL"],  # Add for level 7 (enterprise architecture)
+    },
     "security-engineer": ["IRMG", "SCTY", "PENT"],
     "support-engineer": ["CSMG", "ASUP", "INCA"],
     "systems-engineer": ["SYSP", "CHMG", "ITOP", "ASMG", "DEMM", "DCMA", "USUP"],
@@ -66,55 +71,6 @@ ENGINEER_TYPES = {
     "systems-engineer": "Systems",
     "qa-engineer": "QA",
 }
-
-# General framework guidance from the PDF
-FRAMEWORK_OVERVIEW = """## Framework Overview
-
-Our approach is built around a small number of core ideas that shape engineering progression:
-
-- **Impact-focused**: We focus on the impact each engineer has on moving the business forward, rather than on long lists of specific skills and behaviours.
-- **Scope increases with seniority**: As you grow, so does the complexity and size of the problems you are expected to solve. As the business grows, the engineering challenges should grow with it.
-- **Simple and meaningful**: This framework brings the most important behaviours and expectations together in a simple way. It is not meant to cover everything an engineer might do, but to highlight the meaningful differences between levels.
-- **Broad behaviours**: Behaviours are intentionally broad so they reflect the many ways engineers can contribute. Our aim is to describe the level of technical contribution and mindset we expect at each stage, not create a checklist of tasks.
-- **Supporting conversations**: We want to make space for the different ways people add value. This framework exists to support 1:1s, performance reviews and development conversations, helping managers and engineers talk clearly about scope, impact and alignment with our engineering principles.
-- **Practice-focused**: The framework focuses on the practice of engineering itself, not the specific tools or languages you use.
-
-**Levels are cumulative**: Each level builds on the one before it. Engineers are expected to show the behaviours and technical habits of earlier levels as they progress.
-
-### Impact
-
-Impact is the primary driver for progression. Your impact reflects your sphere of influence and the contribution you make to our mission and goals. Different roles and disciplines create impact in different ways. Focusing on impact allows us to recognise engineers who move things forward (and who "get things done") without requiring them to perform specific routines.
-
-Impact grows through a mix of building technical skill, gaining real experience, learning from that experience and pairing it with the right behaviours.
-
-**Excellence here looks like:**
-
-- Choosing work that meaningfully moves your team, discipline and the business forward, in line with the scope of your role.
-- Identifying opportunities to improve engineering outcomes and making them clear so the team can prioritise effectively.
-- Consistently getting things done, contributing to the team and earning a reputation as a reliable, high-quality engineer.
-
-### Technical Skills
-
-This section is about how you apply your technical ability and develop your craft. It describes the behaviours that show effective technical contribution at different levels of complexity and ambiguity.
-
-We look at technical contribution through four lenses: quality, testability, performance and your ability to design and review systems.
-
-**Excellence here looks like:**
-
-- Your code and technical work are considered high quality by your peers and senior engineers.
-- You can design systems that solve business problems efficiently and reduce ambiguity at both the technical and product level.
-- You design with the right level of complexity, keeping things simple where possible.
-- Your work is resilient, well tested and capable of scaling as the business grows.
-
-### Behaviours
-
-Behaviours sit alongside technical skills and impact. They cover the core habits, mindsets and ways of working we expect engineers to show.
-
-Through your behaviour you set the tone for those around you. Great engineers role model great behaviours, and self-aware engineers know when they are setting a strong example.
-
-Behaviours reflect consistent habits and intentional choices, rather than doing the right thing by chance or on "autopilot".
-
-"""
 
 # Level-specific scope summaries and descriptions (from PDF)
 LEVEL_DESCRIPTIONS = {
@@ -195,9 +151,6 @@ def generate_role_page(
 
     content += "---\n\n"
 
-    # Add framework overview and guidance
-    content += FRAMEWORK_OVERVIEW
-
     # Add level-specific scope summary and description
     level_desc = get_level_description(level, role_path)
     content += "## Role Overview\n\n"
@@ -217,16 +170,10 @@ def generate_role_page(
         skill = skills[skill_code]
         level_desc = skill.get_level_description(level)
 
+        # Skip skills that don't have a description at this level
         if not level_desc:
-            # Try to find the closest available level
-            available_levels = sorted(skill.level_descriptions.keys())
-            if available_levels:
-                # Use the highest level that's <= target level, or lowest if all are higher
-                suitable_levels = [l for l in available_levels if l <= level]
-                if suitable_levels:
-                    level_desc = skill.get_level_description(max(suitable_levels))
-                else:
-                    level_desc = skill.get_level_description(min(available_levels))
+            print(f"Info: Skill {skill_code} ({skill.name}) not applicable at level {level}, skipping", file=sys.stderr)
+            continue
 
         content += f"### {skill.name} ({skill_code})\n\n"
 
@@ -242,88 +189,10 @@ def generate_role_page(
             content += f"**Guidance Notes:**\n\n"
             content += f"{skill.guidance_notes}\n\n"
 
-        if level_desc:
-            content += f"**Level {level} Attainment:**\n\n"
-            content += f"{level_desc}\n\n"
-        else:
-            content += f"*Note: Level {level} description not available for this skill.*\n\n"
+        content += f"**Level {level} Attainment:**\n\n"
+        content += f"{level_desc}\n\n"
 
         content += "---\n\n"
-
-    # Add navigation links
-    content += "## Navigation\n\n"
-
-    # Determine valid level range for this path
-    if role_path == "engineering":
-        min_level, max_level = 1, 7
-        level_filenames = {
-            1: "level-1-associate.md",
-            2: "level-2-engineer.md",
-            3: "level-3-senior.md",
-            4: "level-4-lead.md",
-            5: "level-5-principal.md",
-            6: "level-6-distinguished.md",
-            7: "level-7-chief.md"
-        }
-    elif role_path == "management":
-        min_level, max_level = 4, 7
-        level_filenames = {
-            4: "level-4-engineering-manager.md",
-            5: "level-5-senior-engineering-manager.md",
-            6: "level-6-director-of-engineering.md",
-            7: "level-7-vp-of-engineering.md"
-        }
-    elif role_path == "product":
-        min_level, max_level = 3, 7
-        level_filenames = {
-            3: "level-3-business-analyst.md",
-            4: "level-4-product-manager.md",
-            5: "level-5-senior-product-manager.md",
-            6: "level-6-director-of-product.md",
-            7: "level-7-vp-of-product.md"
-        }
-    elif role_path == "programmes":
-        min_level, max_level = 2, 6
-        level_filenames = {
-            2: "level-2-project-assistant.md",
-            3: "level-3-project-manager.md",
-            4: "level-4-programme-manager.md",
-            5: "level-5-senior-programme-manager.md",
-            6: "level-6-director-of-programmes.md"
-        }
-    else:
-        min_level, max_level = 1, 7
-        level_filenames = {}
-
-    nav_links = []
-
-    # Previous level link
-    if level > min_level:
-        prev_level = level - 1
-        prev_filename = level_filenames.get(prev_level, f"level-{prev_level}.md")
-        prev_title_text = ROLE_TITLES[role_path][prev_level]
-        if role_path == "engineering":
-            prev_title_text = prev_title_text.format(type=engineer_type)
-        nav_links.append(f"← [Previous: {prev_title_text}]({prev_filename})")
-
-    # Next level link
-    if level < max_level:
-        next_level = level + 1
-        next_filename = level_filenames.get(next_level, f"level-{next_level}.md")
-        next_title_text = ROLE_TITLES[role_path][next_level]
-        if role_path == "engineering":
-            next_title_text = next_title_text.format(type=engineer_type)
-        nav_links.append(f"[Next: {next_title_text}]({next_filename}) →")
-
-    if nav_links:
-        content += "**Career Path Navigation:** " + " | ".join(nav_links) + "\n\n"
-
-    # Link back to index
-    if role_path == "engineering":
-        index_path = "../../../index.md"
-    else:
-        index_path = "../../index.md"
-    content += f"**Back to:** [Home]({index_path})\n\n"
 
     # Write file
     filename = f"level-{level}-{role_type.replace('_', '-')}.md"
@@ -372,8 +241,19 @@ def main():
     print("Generating engineering role pages...")
     for engineer_type in ["software-engineer", "security-engineer", "support-engineer",
                           "systems-engineer", "qa-engineer"]:
-        role_skills = ROLE_SKILLS[engineer_type]
+        role_skills_def = ROLE_SKILLS[engineer_type]
+
         for level in range(1, 8):
+            # Handle level-specific skills for software engineers
+            if isinstance(role_skills_def, dict):
+                role_skills = role_skills_def["base"].copy()
+                if level >= 6:
+                    role_skills.extend(role_skills_def["senior"])
+                if level >= 7:
+                    role_skills.extend(role_skills_def["strategic"])
+            else:
+                role_skills = role_skills_def
+
             output_dir = docs_dir / "roles" / "engineering" / engineer_type
             generate_role_page(
                 "engineering",
@@ -386,7 +266,8 @@ def main():
 
     # Generate management role pages (levels 4-7)
     print("\nGenerating management role pages...")
-    role_skills = ROLE_SKILLS["people-management"]
+    role_skills_def = ROLE_SKILLS["people-management"]
+    role_skills = role_skills_def if isinstance(role_skills_def, list) else role_skills_def["base"]
     for level in range(4, 8):
         output_dir = docs_dir / "roles" / "management"
         generate_role_page(
@@ -400,7 +281,8 @@ def main():
 
     # Generate product role pages (levels 3-7)
     print("\nGenerating product role pages...")
-    role_skills = ROLE_SKILLS["product-management"]
+    role_skills_def = ROLE_SKILLS["product-management"]
+    role_skills = role_skills_def if isinstance(role_skills_def, list) else role_skills_def["base"]
     for level in range(3, 8):
         output_dir = docs_dir / "roles" / "product"
         generate_role_page(

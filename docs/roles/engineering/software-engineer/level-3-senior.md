@@ -6,52 +6,6 @@
 
 ---
 
-## Framework Overview
-
-Our approach is built around a small number of core ideas that shape engineering progression:
-
-- **Impact-focused**: We focus on the impact each engineer has on moving the business forward, rather than on long lists of specific skills and behaviours.
-- **Scope increases with seniority**: As you grow, so does the complexity and size of the problems you are expected to solve. As the business grows, the engineering challenges should grow with it.
-- **Simple and meaningful**: This framework brings the most important behaviours and expectations together in a simple way. It is not meant to cover everything an engineer might do, but to highlight the meaningful differences between levels.
-- **Broad behaviours**: Behaviours are intentionally broad so they reflect the many ways engineers can contribute. Our aim is to describe the level of technical contribution and mindset we expect at each stage, not create a checklist of tasks.
-- **Supporting conversations**: We want to make space for the different ways people add value. This framework exists to support 1:1s, performance reviews and development conversations, helping managers and engineers talk clearly about scope, impact and alignment with our engineering principles.
-- **Practice-focused**: The framework focuses on the practice of engineering itself, not the specific tools or languages you use.
-
-**Levels are cumulative**: Each level builds on the one before it. Engineers are expected to show the behaviours and technical habits of earlier levels as they progress.
-
-### Impact
-
-Impact is the primary driver for progression. Your impact reflects your sphere of influence and the contribution you make to our mission and goals. Different roles and disciplines create impact in different ways. Focusing on impact allows us to recognise engineers who move things forward (and who "get things done") without requiring them to perform specific routines.
-
-Impact grows through a mix of building technical skill, gaining real experience, learning from that experience and pairing it with the right behaviours.
-
-**Excellence here looks like:**
-
-- Choosing work that meaningfully moves your team, discipline and the business forward, in line with the scope of your role.
-- Identifying opportunities to improve engineering outcomes and making them clear so the team can prioritise effectively.
-- Consistently getting things done, contributing to the team and earning a reputation as a reliable, high-quality engineer.
-
-### Technical Skills
-
-This section is about how you apply your technical ability and develop your craft. It describes the behaviours that show effective technical contribution at different levels of complexity and ambiguity.
-
-We look at technical contribution through four lenses: quality, testability, performance and your ability to design and review systems.
-
-**Excellence here looks like:**
-
-- Your code and technical work are considered high quality by your peers and senior engineers.
-- You can design systems that solve business problems efficiently and reduce ambiguity at both the technical and product level.
-- You design with the right level of complexity, keeping things simple where possible.
-- Your work is resilient, well tested and capable of scaling as the business grows.
-
-### Behaviours
-
-Behaviours sit alongside technical skills and impact. They cover the core habits, mindsets and ways of working we expect engineers to show.
-
-Through your behaviour you set the tone for those around you. Great engineers role model great behaviours, and self-aware engineers know when they are setting a strong example.
-
-Behaviours reflect consistent habits and intentional choices, rather than doing the right thing by chance or on "autopilot".
-
 ## Role Overview
 
 **Scope Summary:** An experienced engineer who works independently on complex tasks and contributes significantly to team success.
@@ -135,38 +89,6 @@ Collaborates in reviews of work with others as appropriate.
 
 ---
 
-### Solution architecture (ARCH)
-
-**SFIA Reference:** [ARCH](https://sfia-online.org/en/skillcode/9/ARCH)
-
-**Category:** Strategy and architecture | **Subcategory:** Strategy and planning
-
-**Overall Description:**
-
-Developing and communicating a multi-dimensional solution architecture to deliver agreed business outcomes.
-
-**Guidance Notes:**
-
-Activities may include, but are not limited to:
-
-defining the planned operation and maintenance of the solution within a production environment, including changes to services, processes, organisation and operating models as well as technology 
-ensuring existing and planned solution components are compatible with relevant architectures, strategies, policies, standards and practices 
-considering requirements for security, privacy and testing of solutions
-taking account of relevant architectures, strategies, policies, standards and practices 
-identifying appropriate cloud services, evaluating their cost implications and optimising for cost-efficiency
-developing roadmaps to migrate components to cloud services
-developing and communicating an implementation roadmap 
-providing guidance and risk-based governance to support solution implementation including managing requests for changes and deviations from specifications.
-
-**Level 3 Attainment:**
-
-Contributes to the development of solution architectures in specific business, infrastructure or functional areas. 
-Identifies and evaluates alternative architectures and the trade-offs in cost, performance and scalability. Determines and documents architecturally significant decisions. 
-Produces specifications of cloud-based or on-premises components, tiers and interfaces, for translation into detailed designs using selected services and products. 
-Supports projects or change initiatives through the preparation of technical plans and application of design principles. Aligns solutions with enterprise and solution architecture standards (including security).
-
----
-
 ### Database administration (DBAD)
 
 **SFIA Reference:** [DBAD](https://sfia-online.org/en/skillcode/9/DBAD)
@@ -231,10 +153,4 @@ Performs rollbacks of deployments in case of issues or failures.
 Collaborates with release management and operations teams.
 
 ---
-
-## Navigation
-
-**Career Path Navigation:** ← [Previous: Software Engineer](level-2-engineer.md) | [Next: Lead Software Engineer](level-4-lead.md) →
-
-**Back to:** [Home](../../../index.md)
 

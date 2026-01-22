@@ -6,52 +6,6 @@
 
 ---
 
-## Framework Overview
-
-Our approach is built around a small number of core ideas that shape engineering progression:
-
-- **Impact-focused**: We focus on the impact each engineer has on moving the business forward, rather than on long lists of specific skills and behaviours.
-- **Scope increases with seniority**: As you grow, so does the complexity and size of the problems you are expected to solve. As the business grows, the engineering challenges should grow with it.
-- **Simple and meaningful**: This framework brings the most important behaviours and expectations together in a simple way. It is not meant to cover everything an engineer might do, but to highlight the meaningful differences between levels.
-- **Broad behaviours**: Behaviours are intentionally broad so they reflect the many ways engineers can contribute. Our aim is to describe the level of technical contribution and mindset we expect at each stage, not create a checklist of tasks.
-- **Supporting conversations**: We want to make space for the different ways people add value. This framework exists to support 1:1s, performance reviews and development conversations, helping managers and engineers talk clearly about scope, impact and alignment with our engineering principles.
-- **Practice-focused**: The framework focuses on the practice of engineering itself, not the specific tools or languages you use.
-
-**Levels are cumulative**: Each level builds on the one before it. Engineers are expected to show the behaviours and technical habits of earlier levels as they progress.
-
-### Impact
-
-Impact is the primary driver for progression. Your impact reflects your sphere of influence and the contribution you make to our mission and goals. Different roles and disciplines create impact in different ways. Focusing on impact allows us to recognise engineers who move things forward (and who "get things done") without requiring them to perform specific routines.
-
-Impact grows through a mix of building technical skill, gaining real experience, learning from that experience and pairing it with the right behaviours.
-
-**Excellence here looks like:**
-
-- Choosing work that meaningfully moves your team, discipline and the business forward, in line with the scope of your role.
-- Identifying opportunities to improve engineering outcomes and making them clear so the team can prioritise effectively.
-- Consistently getting things done, contributing to the team and earning a reputation as a reliable, high-quality engineer.
-
-### Technical Skills
-
-This section is about how you apply your technical ability and develop your craft. It describes the behaviours that show effective technical contribution at different levels of complexity and ambiguity.
-
-We look at technical contribution through four lenses: quality, testability, performance and your ability to design and review systems.
-
-**Excellence here looks like:**
-
-- Your code and technical work are considered high quality by your peers and senior engineers.
-- You can design systems that solve business problems efficiently and reduce ambiguity at both the technical and product level.
-- You design with the right level of complexity, keeping things simple where possible.
-- Your work is resilient, well tested and capable of scaling as the business grows.
-
-### Behaviours
-
-Behaviours sit alongside technical skills and impact. They cover the core habits, mindsets and ways of working we expect engineers to show.
-
-Through your behaviour you set the tone for those around you. Great engineers role model great behaviours, and self-aware engineers know when they are setting a strong example.
-
-Behaviours reflect consistent habits and intentional choices, rather than doing the right thing by chance or on "autopilot".
-
 ## Role Overview
 
 **Scope Summary:** An exceptional technical leader recognised for outstanding contributions to engineering excellence.
@@ -165,38 +119,6 @@ Coordinates and manages the target architecture across multiple projects or init
 
 ---
 
-### Database administration (DBAD)
-
-**SFIA Reference:** [DBAD](https://sfia-online.org/en/skillcode/9/DBAD)
-
-**Category:** Delivery and operation | **Subcategory:** Data and records operations
-
-**Overall Description:**
-
-Installing, configuring, monitoring, maintaining databases and data stores, ensuring performance and security and adapting to evolving technologies.
-
-**Guidance Notes:**
-
-Database administration involves managing operational databases in production environments as well as supporting databases for development, testing and iterative improvements. The focus is on ensuring database availability, integrity, security and performance across a variety of database types, including relational, NoSQL and cloud-based databases.
-Activities may include, but are not limited to:
-
-identifying and acting on automation opportunities to improve performance and value from databases, data stores and data pipelines
-using database management system software and tools including both cloud-based and on-premises solutions
-applying knowledge of the logical database schema
-ensuring compliance with data privacy laws and regulations
-designing and implementing disaster recovery, backup strategies, and security monitoring protocols
-integrating and managing databases across hybrid environments, combining on-premises and cloud-based solutions
-monitoring emerging database technologies and trends, including security features and vulnerabilities.
-
-**Level 6 Attainment:**
-
-Provides technical leadership to optimise the performance of databases.
-Drives the adoption of tools and automated processes for effective database management and delivery.
-Oversees the planning, installation, maintenance and acceptance of new and updated database components and database-based services. Ensures alignment to service expectations, security requirements and other quality standards.
-Ensures database operational procedures and documentation are current and effective, tracks and addresses operational issues and reports to stakeholders.
-
----
-
 ### Deployment (DEPL)
 
 **SFIA Reference:** [DEPL](https://sfia-online.org/en/skillcode/9/DEPL)
@@ -230,9 +152,75 @@ Drives the adoption of new deployment techniques and technologies. Collaborates 
 
 ---
 
-## Navigation
+### Systems and software lifecycle engineering (SLEN)
 
-**Career Path Navigation:** ← [Previous: Principal Software Engineer](level-5-principal.md) | [Next: Chief Software Engineer](level-7-chief.md) →
+**SFIA Reference:** [SLEN](https://sfia-online.org/en/skillcode/9/SLEN)
 
-**Back to:** [Home](../../../index.md)
+**Category:** Development and implementation | **Subcategory:** Systems development
+
+**Overall Description:**
+
+Establishing and deploying an environment for developing, continually improving and securely operating software and systems products and services.
+
+**Guidance Notes:**
+
+This skill involves interdisciplinary approaches to developing and operating software and systems across their entire lifecycle. Commonly associated with terms such as DevOps, DevSecOps, site reliability engineering, developer productivity engineering.
+This skill extends beyond continuous improvement. It focuses on integrating technical practices and collaborative methods, automation and lifecycle processes essential for system reliability, security and operational excellence.
+Activities include, but are not limited to:
+
+establishing secure, reliable software lifecycle practices
+developing a supporting framework of methods, tools, processes, procedures and skilled personnel
+deploying this environment with teams responsible for developing and operating software and systems 
+building repeatable, reliable capabilities through trial, feedback, learning and continual evolution
+adapting practices to specific products and services
+defining, controlling and improving lifecycle processes
+incorporating risk management, quality, security, privacy and safety
+maximising automation
+establishing architecture and design principles to support lifecycle processes
+focusing on mission, value and customer needs
+cultivating a culture of collaboration, learning, adaptation and resilience
+integrating industry frameworks to guide improvements.
+
+**Level 6 Attainment:**
+
+Obtains organisational commitment to strategies to deliver systems and software lifecycle working practices to achieve business objectives. 
+Works with others to integrate organisational policies, standards and techniques across the full software and systems lifecycle. 
+Develops and deploys the working environment supporting systems and software lifecycle practices for strategic, large and complex products and services. 
+Leads activities to manage risks associated with systems and software lifecycle working practices. Plans and manages the evaluation or assessment of systems and software lifecycle working practices
+
+---
+
+### Systems development management (DLMG)
+
+**SFIA Reference:** [DLMG](https://sfia-online.org/en/skillcode/9/DLMG)
+
+**Category:** Development and implementation | **Subcategory:** Systems development
+
+**Overall Description:**
+
+Planning, estimating and executing systems development work to time, budget and quality targets.
+
+**Guidance Notes:**
+
+Systems development include the delivery of projects, initiatives, enhancement requests and the maintenance of existing systems.
+Activities may include, but are not limited to:
+
+planning and estimating work
+adopting and adapting systems development lifecycle models based on the context of the work and selecting appropriately from predictive (plan-driven) approaches or adaptive (iterative/agile) approaches
+collaboration and open communication with stakeholders with a focus on delivering value from systems development
+managing risks and allowing for timely adjustment of plans and deliverables to continue to meet customer requirements and deliver value
+ensuring systems development work meets the required quality standards
+aligning systems development activity and deliverables with architectures and standards and ensuring quality, security and privacy are built in
+developing roadmaps to communicate systems development plans
+identifying, allocating and managing resources (including staff, equipment and budgets) and how demand will be met with a supply capacity
+continuous improvement to refine and optimise systems development processes.
+
+**Level 6 Attainment:**
+
+Sets policy and drives adherence to standards for systems development. 
+Leads activities to make security and privacy integral to systems development. 
+Identifies and manages the resources necessary for all stages of systems development projects. 
+Ensures technical, financial and quality targets are met.
+
+---
 

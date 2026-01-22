@@ -4,52 +4,6 @@
 
 ---
 
-## Framework Overview
-
-Our approach is built around a small number of core ideas that shape engineering progression:
-
-- **Impact-focused**: We focus on the impact each engineer has on moving the business forward, rather than on long lists of specific skills and behaviours.
-- **Scope increases with seniority**: As you grow, so does the complexity and size of the problems you are expected to solve. As the business grows, the engineering challenges should grow with it.
-- **Simple and meaningful**: This framework brings the most important behaviours and expectations together in a simple way. It is not meant to cover everything an engineer might do, but to highlight the meaningful differences between levels.
-- **Broad behaviours**: Behaviours are intentionally broad so they reflect the many ways engineers can contribute. Our aim is to describe the level of technical contribution and mindset we expect at each stage, not create a checklist of tasks.
-- **Supporting conversations**: We want to make space for the different ways people add value. This framework exists to support 1:1s, performance reviews and development conversations, helping managers and engineers talk clearly about scope, impact and alignment with our engineering principles.
-- **Practice-focused**: The framework focuses on the practice of engineering itself, not the specific tools or languages you use.
-
-**Levels are cumulative**: Each level builds on the one before it. Engineers are expected to show the behaviours and technical habits of earlier levels as they progress.
-
-### Impact
-
-Impact is the primary driver for progression. Your impact reflects your sphere of influence and the contribution you make to our mission and goals. Different roles and disciplines create impact in different ways. Focusing on impact allows us to recognise engineers who move things forward (and who "get things done") without requiring them to perform specific routines.
-
-Impact grows through a mix of building technical skill, gaining real experience, learning from that experience and pairing it with the right behaviours.
-
-**Excellence here looks like:**
-
-- Choosing work that meaningfully moves your team, discipline and the business forward, in line with the scope of your role.
-- Identifying opportunities to improve engineering outcomes and making them clear so the team can prioritise effectively.
-- Consistently getting things done, contributing to the team and earning a reputation as a reliable, high-quality engineer.
-
-### Technical Skills
-
-This section is about how you apply your technical ability and develop your craft. It describes the behaviours that show effective technical contribution at different levels of complexity and ambiguity.
-
-We look at technical contribution through four lenses: quality, testability, performance and your ability to design and review systems.
-
-**Excellence here looks like:**
-
-- Your code and technical work are considered high quality by your peers and senior engineers.
-- You can design systems that solve business problems efficiently and reduce ambiguity at both the technical and product level.
-- You design with the right level of complexity, keeping things simple where possible.
-- Your work is resilient, well tested and capable of scaling as the business grows.
-
-### Behaviours
-
-Behaviours sit alongside technical skills and impact. They cover the core habits, mindsets and ways of working we expect engineers to show.
-
-Through your behaviour you set the tone for those around you. Great engineers role model great behaviours, and self-aware engineers know when they are setting a strong example.
-
-Behaviours reflect consistent habits and intentional choices, rather than doing the right thing by chance or on "autopilot".
-
 ## Role Overview
 
 **Scope Summary:** A senior technical expert who influences engineering practices across the organisation.
@@ -93,10 +47,4 @@ Explains what information is needed and ensures they provide this information to
 Produces reports as appropriate for portfolio governance, including making recommendations for changes to the portfolio.
 
 ---
-
-## Navigation
-
-**Career Path Navigation:** ← [Previous: Programme Manager](level-4-programme-manager.md) | [Next: Director of Programmes](level-6-director-of-programmes.md) →
-
-**Back to:** [Home](../../index.md)
 
