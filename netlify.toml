@@ -1,0 +1,23 @@
+[build]
+  # Build command to generate the static site
+  command = "pip install -r requirements.txt && mkdocs build"
+  
+  # Directory where MkDocs outputs the built site
+  publish = "site"
+
+[build.environment]
+  # Python version to use (Netlify supports 3.8, 3.9, 3.10, 3.11, 3.12)
+  PYTHON_VERSION = "3.11"
+
+# Edge Functions for Basic Auth (optional - see auth.ts)
+[[edge_functions]]
+  function = "auth"
+  path = "/*"
+
+# Optional: Custom headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

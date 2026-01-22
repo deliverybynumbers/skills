@@ -1,5 +1,6 @@
 site_name: Tech Department Career Framework
 site_description: A career framework for tech departments using SFIA skills definitions
+site_url: https://deliverybynumbers.github.io/skills/
 
 theme:
   name: shadcn
