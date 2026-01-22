@@ -170,7 +170,7 @@ Assesses suppliers' development and testing capabilities. Manages client relatio
 
 ## Navigation
 
-**Career Path Navigation:** ← [Previous: Principal Security Engineer](level-5-principal.md) | [Next: CTO](level-7-cto.md) →
+**Career Path Navigation:** ← [Previous: Principal Security Engineer](level-5-principal.md) | [Next: Chief Security Engineer](level-7-chief.md) →
 
 **Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
 

@@ -206,7 +206,7 @@ Develops organisational policies, standards and guidelines for acceptance testin
 
 ## Navigation
 
-**Career Path Navigation:** ← [Previous: Principal QA Engineer](level-5-principal.md) | [Next: CTO](level-7-cto.md) →
+**Career Path Navigation:** ← [Previous: Principal QA Engineer](level-5-principal.md) | [Next: Chief QA Engineer](level-7-chief.md) →
 
 **Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
 

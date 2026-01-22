@@ -78,7 +78,7 @@ Five specialized engineering tracks, each with seven levels:
 - [Level 4: Lead Engineer](roles/engineering/software-engineer/level-4-lead.md)
 - [Level 5: Principal Engineer](roles/engineering/software-engineer/level-5-principal.md)
 - [Level 6: Distinguished Engineer](roles/engineering/software-engineer/level-6-distinguished.md)
-- [Level 7: CTO](roles/engineering/software-engineer/level-7-cto.md)
+- [Level 7: Chief Engineer](roles/engineering/software-engineer/level-7-chief.md)
 
 #### 2. Management Path
 People management and engineering leadership (Levels 4-7):

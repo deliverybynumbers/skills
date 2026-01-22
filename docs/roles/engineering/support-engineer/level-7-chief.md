@@ -1,4 +1,4 @@
-# CTO
+# Chief Support Engineer
 
 **Level 7** | **Career Path:** Engineering
 
@@ -56,7 +56,7 @@ Behaviours reflect consistent habits and intentional choices, rather than doing 
 
 **Scope Summary:** The senior technical leader responsible for setting technical strategy and direction.
 
-The CTO sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence.
+The Chief Engineer sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence.
 
 ---
 

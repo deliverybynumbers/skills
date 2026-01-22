@@ -34,7 +34,7 @@ ROLE_TITLES = {
         4: "Lead {type} Engineer",
         5: "Principal {type} Engineer",
         6: "Distinguished {type} Engineer",
-        7: "CTO",
+        7: "Chief {type} Engineer",
     },
     "management": {
         4: "Engineering Manager",
@@ -155,7 +155,7 @@ def get_level_description(level: int, role_path: str) -> Dict[str, str]:
         },
         7: {
             "scope_summary": "The senior technical leader responsible for setting technical strategy and direction.",
-            "description": "The CTO sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence."
+            "description": "The Chief Engineer sets technical strategy and direction for the organisation, inspiring and mobilising teams to achieve engineering excellence."
         }
     }
     
@@ -263,7 +263,7 @@ def generate_role_page(
             4: "level-4-lead.md",
             5: "level-5-principal.md",
             6: "level-6-distinguished.md",
-            7: "level-7-cto.md"
+            7: "level-7-chief.md"
         }
     elif role_path == "management":
         min_level, max_level = 4, 7
@@ -344,7 +344,7 @@ def generate_role_page(
         elif level == 6:
             filename = "level-6-distinguished.md"
         elif level == 7:
-            filename = "level-7-cto.md"
+            filename = "level-7-chief.md"
     else:
         # For other paths, use descriptive names
         slug = title.lower().replace(" ", "-").replace(" of ", "-of-")

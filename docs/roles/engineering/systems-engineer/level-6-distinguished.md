@@ -293,7 +293,7 @@ Promotes organisational collaboration and ensures that incident management proce
 
 ## Navigation
 
-**Career Path Navigation:** ← [Previous: Principal Systems Engineer](level-5-principal.md) | [Next: CTO](level-7-cto.md) →
+**Career Path Navigation:** ← [Previous: Principal Systems Engineer](level-5-principal.md) | [Next: Chief Systems Engineer](level-7-chief.md) →
 
 **Back to:** [Home](../../../index.md) | [About the Framework](../../../about.md)
 
